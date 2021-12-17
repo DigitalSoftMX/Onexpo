@@ -1,0 +1,1226 @@
+$white: #ffffff;
+$black: #000000;
+$gray: #333;
+$lightgray:#818a91;
+$blue: #19375E;
+$green: #37B086;
+
+$font-size: 16;
+$max-width: 1600px;
+$min-width:1100px;
+//MEDIAS
+$max: 1600px;
+$lap: 1400px;
+$lg: 1200px;
+$md: 850px;
+$sm: 580px;
+$xs: 400px;
+
+
+@font-face {
+  font-family: 'NunitoBlack';
+  src: url(../fonts/NunitoSans-Black.ttf);
+}
+
+@font-face {
+  font-family: 'Nunitoregular';
+  src: url(../fonts/NunitoSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'NunitoBold';
+  src: url(../fonts/NunitoSans-Bold.ttf);
+}
+
+$boxShadow: 0px 0px 26px -4px rgba(149,149,149,0.75);
+
+//FUNCTIONS
+@function pxtorem($px) {
+  @return #{$px/$font-size}rem;
+}
+
+@function col($n, $t: 18) {
+  @return #{(($n * 100) / $t)}#{"%"};
+}
+
+@mixin h1($color: initial, $scale: 1) {
+  font-family: 'NunitoBlack';
+  font-size: pxtorem(60 * $scale);
+  color: $color;
+  margin: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  @media screen and (max-width: $md) {
+    font-size: pxtorem(24 * $scale);
+  }
+  @media screen and (max-width: $sm) {
+    font-size: pxtorem(24 * $scale);
+  }
+}
+
+h1 {
+  @include h1();
+}
+
+@mixin h2($color: initial, $scale: 1) {
+  font-family: 'NunitoBlack', sans-serif;
+  font-size: pxtorem(26 * $scale);
+  color: $color;
+  margin: 0;
+  text-transform: uppercase;
+  @media screen and (max-width: $md) {
+    font-size: pxtorem(24 * $scale);
+  }
+  @media screen and (max-width: $sm) {
+    font-size: pxtorem(24 * $scale);
+  }
+}
+
+h2 {
+  @include h2($blue,1);
+}
+
+@mixin h3($color: initial, $scale: 1) {
+  font-family: 'NunitoBlack', sans-serif;
+  font-size: pxtorem(18 * $scale);
+  color: $color;
+  margin: 0;
+  text-transform: uppercase;
+  @media screen and (max-width: $md) {
+    font-size: pxtorem(24 * $scale);
+  }
+  @media screen and (max-width: $sm) {
+    font-size: pxtorem(24 * $scale);
+  }
+}
+
+h3 {
+  @include h3($blue,1);
+}
+
+
+@mixin p($color: initial, $scale: 1) {
+  font-family: 'NunitoRegular';
+  font-size: pxtorem(18 * $scale);
+  color: $color;
+  margin: 0;
+  font-weight: 400;
+ 
+}
+
+p {
+  @include p();
+  &.especial{
+    
+    font-family: 'NunitoBold';
+    @media screen and (max-width: $lg) {
+      @include p(initial,.9);
+    }
+  }
+}
+
+@mixin button($bg) {
+  background: $bg;
+  font-family: 'NunitoBold';
+  font-size: 16px;
+  color: $white;
+  width: 160px;
+  height: 40px;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  margin: auto;
+  cursor: pointer;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  &:hover {
+    background: darken($bg, 8%);
+    transition: all 0.3s ease;
+  }
+  &:active {
+    background: darken($bg, 25%);
+  }
+}
+
+.button {
+  @include button($blue);
+}
+
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.nav {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  z-index: 999;
+  width: col(18);
+  background-color: rgba(0, 0, 0, 0.527);
+  @media screen and (max-width: $md) {
+    padding:15px;
+   }
+  .container{
+    max-width: $max-width;
+    margin: 20px auto 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (max-width: $lap) {
+      max-width: $min-width;
+    }
+    .logo{
+      width: 200px;
+    }
+  }
+  p{
+    @include p ($white,0.8);
+    text-transform: uppercase;
+    @media screen and (max-width: $md) {
+     display: none;
+    }
+  }
+
+  .burguer{
+    display: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    @media screen and (max-width: $md) {
+      display: flex;
+     }
+     >div{
+       width: 100%;
+       height: 3px;
+       background-color: $white;
+     }
+  }
+}
+
+.responsive-nav{
+  display: none;
+  position: fixed;
+  right: -100%;
+  transition: all .5s ease;
+  top: 144px;
+  background: $blue;
+  text-align: center;
+  width: 100%;
+  height: 70%;
+  flex-direction: column;
+  justify-content: space-between;
+  @media screen and (max-width: $md) {
+    display: flex;
+   }
+   &.active{
+    right: 0;
+    
+    z-index: 9999;
+   }
+   p{
+     color: $white;
+     margin: 15px 0;
+   }
+}
+
+
+
+/********************* Home ******************/
+
+.index{
+  width: col(18);
+  height: 100vh;
+  background-image: url(../img/home.png);
+  background-size: cover;
+
+}
+
+.unete{
+  width: col(16);
+  margin: col(1);
+  height: 90vh;
+  display: flex;
+  align-items: center;
+ 
+  @media screen and (max-width: $lg) {
+    //margin: col(1);
+  }
+
+  .container{
+    width: col(18);
+    display: flex;
+    align-items: center;
+    max-width: $min-width;
+    margin: auto;
+    @media screen and (max-width: $lg) {
+      flex-direction: column;
+    }
+  }
+  .left{
+    width: col(7);
+    @media screen and (max-width: $lg) {
+      width: col(18);
+      margin-bottom: 50px;
+    }
+    p{
+      color: $blue;
+      max-width: 350px;
+    }
+  }
+  .right{
+    width: col(11);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: space-between;
+    align-items: center;
+    @media screen and (max-width: $lg) {
+      width: col(18);
+    }
+    .card{
+      background-color: $white;
+      width: 90%;
+      height: 250px;
+      box-shadow: 0px 0px 20px -6px rgba(115,115,115,1);
+      border-radius: 15px;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      transition: all .5s ease;
+      
+      .svg{
+        width: 100px;
+        svg{
+          transition: all .5s ease;
+          .cls-1{
+            fill: $blue;
+          }
+        }
+      }
+      h3{
+        margin-top: 25px;
+        margin-bottom: 10px;
+        max-width: 150px;
+        text-align: center;
+      }
+      .text{
+        text-align: center;
+        //transform: scaleY(0);
+        transition: all .5s ease;
+        display: none;
+        p{
+          margin-bottom: 10px;
+          color: $white;
+        }
+      }
+      .chevron{
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: $green;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .5s ease;
+        transform-origin: center center;
+        transform: scale(0);
+        img{
+          width: 15px;
+        }
+      }
+      &:hover{
+        background-color: $blue;
+        flex: 1;
+        
+        transition: all .5s ease;
+        &.afiliados{
+          height: 350px;
+        }
+        &.socios{
+          height: 470px;
+        }
+        .svg{
+          width: 100px;
+          svg{
+            transition: all .5s ease;
+            .cls-1{
+              fill: $white;
+            }
+          }
+        }
+        h3{
+          color: $green;
+        }
+        .text{
+          display: block;
+        }
+        .chevron{
+          transform: scale(1.2);
+          transition-delay: .2s;
+        }
+      }
+    }
+  }
+  h1{
+    color: $green;
+  }
+}
+
+.expo{
+  width: col(18);
+  background-image: url(../img/grupo347.jpg);
+  background-size: cover;
+  padding: col(1);
+  background-attachment: fixed;
+  .container{
+    max-width: $min-width;
+    display: flex;
+    align-items: flex-end;
+    margin: auto;
+    @media screen and (max-width: $md) {
+      flex-direction: column;
+    }
+    .left{
+      width: col(13);
+      @media screen and (max-width: $md) {
+        width: col(18);
+        margin-bottom: 25px;
+      }
+    }
+    .right{
+      width: col(5);
+      @media screen and (max-width: $md) {
+        width: col(18);
+      }
+    }
+    h2{
+      margin-bottom: 15px;
+    }
+    p{
+      color: $white;
+    }
+  }
+}
+
+.data{
+  width: col(18);
+  max-width: $min-width;
+  margin: auto;
+  
+  .container{
+    padding: col(1);
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    h2{
+      color: $green;
+      text-align: center;
+    }
+    p{
+      color: $blue;
+      text-align: center;
+    }
+  }
+}
+
+.noticias{
+  background-color: $blue;
+  width: col(18);
+  padding: col(1) 0 col(1) col(1);
+  h1{
+    color: $white;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .container{
+    
+    position: relative;
+
+    .arrow-container{
+      position: absolute;
+      right: 30%;
+      bottom: 10%;
+      display: flex;
+      z-index: 9999;
+      >div{
+        cursor: pointer;
+        margin: 0 25px;
+        img{
+          width: 20px;
+        }
+      }
+    }
+    .slider-noticias{
+      .slick-list{
+        padding:0 20% 0 0 !important;
+        @media screen and (max-width: $lg) {
+          padding:0 0 0 0 !important;
+        }
+      }
+
+      .slide{
+        display: flex !important;
+        align-items: center;
+        .left{
+          width: col(8);
+          img{
+            filter: blur(3px);
+            
+          }
+        }
+        .right{
+          width: col(10);
+          margin: col(1 );
+          h3{
+            color: $green;
+            margin-bottom: 25px;
+          }
+          .date{
+            margin-bottom: 0;
+            @include p ($white,.6)
+          }
+          p{
+            @include p ($white,.8);
+            margin-bottom: 15px;
+          }
+          .button{
+            @include button ($green);
+            margin:0;
+          }
+        }
+      }
+      .slick-current{
+        .left{
+          img{
+            filter: blur(0) !important;
+          }
+        }
+        
+      }
+    }
+  }
+
+    
+}
+
+.directivos{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: col(18);
+  @media screen and (max-width: $md) {
+    width: col(16);
+    margin: auto;
+  }
+    h1.title{
+      color: $green;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .container{
+      max-width: $min-width;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      @media screen and (max-width: $md) {
+        flex-direction: column;
+      }
+      .item{
+        cursor: pointer;
+        margin: 0 15px;
+        border-radius: 50px;
+        height: 450px;
+        overflow: hidden;
+        background-size: cover;
+        position: relative;
+        //flex-grow: 1;
+        width: 10%;
+        transition: all .8s ease;
+        @media screen and (max-width: $md) {
+          width: 100%;
+          height: 90px;
+          margin: 15px 0;
+        }
+        img{
+          object-fit: cover;
+          width: 100%;
+          height: 120%;
+          filter: blur(3px);
+          transition: all .8s ease;
+        }
+
+        .texto{
+          position: absolute;
+          top: 30%;
+          right: 5.555%;
+          opacity: 0;
+          transition: opacity 1s ease;
+          p{
+            text-transform: uppercase;
+            @include p($white,2);
+          }
+          h1{
+            @include h1($white,.8);
+            &:first-of-type{
+              font-weight: 100;
+            }
+          }
+          h2{
+            padding: 5px;
+            color: $white;
+            background-color:$green;
+          }
+        }
+        &:after{
+          content: "";
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.6);
+          border-radius: 50px;
+          transition: all .8s ease;
+        }
+        h3{
+          position: absolute;
+          right: 40px;
+          top: 30%;
+          writing-mode: vertical-rl;
+          transform: rotate(-180deg);
+          color: $white;
+          pointer-events: none;
+          transition: opacity .8s ease;
+          z-index: 9;
+          @media screen and (max-width: $md) {
+            writing-mode: initial;
+            transform: rotate(0deg);
+          }
+        }
+        &.active{
+          width: 70%;
+          //flex-grow: 8;
+          transition: all .8s ease;
+          border-radius: 10px;
+          background-size: cover;
+          @media screen and (max-width: $md) {
+            width: 100%;
+            height: 450px;
+          }
+          img{
+            height: 100%;
+            filter: blur(0);
+          }
+          .texto{
+            opacity: 1;
+          }
+          h3{
+            opacity: 0;
+          }
+          &:after{
+            border-radius: 10px;
+            transition: all .8s ease;
+            opacity: 0;
+          }
+        }
+
+      }
+    }
+}
+
+  //fix para el delay de animacion entre el primer slider y el ultimo slider
+
+  /* slide when not active/center*/
+  .slider-info .slick-slide,
+  .slider-info .slick-slide[aria-hidden="true"]:not(.slick-cloned) ~ .slick-cloned[aria-hidden="true"] {
+    transform: scale(0.9, 0.9);
+    transition: all ease 0.3s;
+    .slide{
+      img{
+        filter: blur(3px);
+      }
+      &:after{
+        background-color: $green;
+        transition: all .5s ease;
+      }
+    }
+  }
+  /* slide when active/center */
+  .slider-info .slick-center,
+  .slider-info .slick-slide[aria-hidden="true"]:not([tabindex="-1"]) + .slick-cloned[aria-hidden="true"] {
+    transform: scale(1, 1);
+    .slide{
+      img{
+        filter: blur(0);
+      }
+      &:after{
+        background-color: $blue;
+        transition: all .5s ease;
+      }
+    }
+  }
+
+.slider-info{
+  margin-top: 150px;
+  margin-bottom: 150px;
+  cursor:grab;
+  &:active{
+    cursor: grabbing;
+  }
+  .slide{
+    position: relative;
+    overflow: hidden;
+    h2{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      color: $white;
+      height: 50px;
+      width: 350px;
+      z-index: 1;
+    }
+    &:after{
+      content: "";
+      width: 100%;
+      height: 100%;
+      opacity: .5;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: all .5s ease;
+    }
+  }
+}
+
+.socios{
+  width: col(18);
+  max-width: $min-width;
+    margin: auto;
+  h1{
+    margin-bottom: 25px;
+    color: $green;
+    text-align: center;
+  }
+
+  .container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    @media screen and (max-width: $md) {
+      grid-template-columns: repeat(2,1fr);
+    }
+    
+    img{
+      justify-self: center;
+      align-self: center;
+      width: 125px;
+    }
+  }
+}
+
+.contacto{
+  width: col(18);
+  background-color: $blue;
+  padding: col(1);
+  &.contact{
+    background-color: $white;
+    margin-top: 92px;
+    margin-bottom: col(1);
+    h2,p{
+      color: $blue !important;
+    }
+    textarea,input{
+      width: 100%;
+      padding: 15px;
+      background-color: transparent;
+      border: solid 1px $lightgray !important;
+      border-radius: 10px;
+    }
+  }
+  h2{
+    margin-bottom: 25px;
+    color: $white;
+    position: relative;
+    &:before{
+      content: "";
+      width: 80px;
+      height: 5px;
+      background-color: $green;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+  .container{
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: $md) {
+      flex-direction: column;
+    }
+    .info{
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      .icon{
+        width: 20px;
+        margin-right: 15px;
+      }
+      p{
+        @include p($white,.9)
+      }
+      &.last{
+        margin: 0;
+      }
+    }
+
+    .left{
+      width: col(11);
+      margin-right: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      @media screen and (max-width: $md) {
+        width: col(18);
+      }
+      >div{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .button{
+          @include button($green);
+          margin:0;
+        }
+      }
+      form{
+        height: 100%;
+        margin-bottom: 20px;
+        
+      }
+      .input-container{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+       
+        label{
+          width: 50%;
+          &:first-of-type{
+            margin-right: 20px;
+          }
+        }
+      }
+
+      textarea,input{
+        width: 100%;
+        padding: 15px;
+        background-color: transparent;
+        border: solid 1px $white;
+        border-radius: 10px;
+      }
+      textarea{
+        height: 60%;
+        //padding: 0;
+      }
+    }
+    .right{
+      width: col(6);
+      @media screen and (max-width: $md) {
+        width: col(18);
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+.wp-tab{
+  background-color: #25D366 ;
+  padding: 5px 15px;
+  border-radius: 10px 10px 0 0;
+  position: fixed;
+  right: col(2);
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  transition: all .5s ease;
+  height: 43px;
+  &:hover{
+    transition: all .5s ease;
+    height: 60px;
+  }
+  p{
+    color: $white;
+    margin-left: 15px;
+  }
+  .icon{
+    width: 25px;
+  }
+}
+
+footer{
+  margin-bottom: col(1);
+  p{
+    text-align: center;
+    @include p ($blue,.8)
+  }
+}
+
+/********************* Noticias ******************/
+
+.news-home{
+  width: col(18);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  background-image: url(../img/noticias1.jpg);
+  background-size: cover;
+  padding: col(1);
+  .date{
+    color: $green;
+  }
+  h2,p{
+    color: $white;
+  }
+  p{
+    margin: 25px 0;
+  }
+  .button{
+    
+    @include button(transparent);
+    margin: 0;
+    border: $green 1px solid;
+  }
+  .card-slider{
+    width: col(18);
+    height: 100%;
+    position: relative;
+   
+    .container{
+      display: flex;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    .card{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 1;
+      background-size: cover;     
+      width: 250px;
+      height: 350px;
+      transition: all .5s ease;
+      cursor: pointer;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      &.active{
+        z-index: 0;
+        transform: scale(10);
+      }
+    }
+  }
+
+
+  .card-slider2{
+    width: col(16);    
+    position: absolute;
+    top: 20%;
+    display: flex;
+    justify-content: space-between;
+    .card{
+      z-index: 1;
+      background-size: cover;     
+      width: 250px;
+      height: 350px;
+      background-image: url(../img/noticias1.jpg);
+      background-size: cover;
+      transition: all .5s ease;
+      &.active{
+        //transform: scale(10);
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+      }
+    }
+  }
+
+}
+
+.news-two{
+  margin-bottom: 100px;
+  width: col(18);
+  padding: col(1);
+  .container{
+    max-width: $min-width;
+    margin: auto;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-auto-flow: dense;
+    place-content: stretch;
+    color: #444;
+    @media screen and (max-width: $lg) {
+      grid-template-columns: repeat(2,1fr);
+      grid-template-rows: repeat(1,1fr);
+    }
+    @media screen and (max-width: $md) {
+      grid-template-columns: repeat(1,1fr);
+      grid-template-rows: repeat(1,1fr);
+    }
+    .news{
+      display: flex;
+      flex-direction: column;
+
+      .texto{
+        flex-grow: 1;
+        padding: 15px;
+        box-shadow: 5px 5px 10px -6px rgb(172, 172, 172);
+        .date{
+          p{
+            color: $blue;
+          }
+          
+          margin-bottom: 15px;
+        }
+      }
+      img{
+        
+        border-radius: 10px 10px 0 0;
+        width: 100%;
+        max-height: 200px;
+        object-fit: cover;
+      }
+      h3{
+        text-transform: initial;
+        margin-bottom: 25px;
+      }
+      &.c {
+        grid-row: 1/3;
+        grid-column: 3/4;
+        @media screen and (max-width: $lg) {
+          grid-row: initial;
+          grid-column: initial;
+        }
+        img{
+          max-height: initial;
+          height: 500px;
+        }
+      }
+    
+      &.e {
+        grid-column: 2/3;
+        grid-row: 2/4;
+        @media screen and (max-width: $lg) {
+          grid-row: initial;
+          grid-column: initial;
+        }
+        img{
+          max-height: initial;
+          height: 500px;
+        }
+      }
+
+    }
+  }
+}
+
+.graph-container{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  .circ{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: $white;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 50%;
+  }
+  circle {
+    fill: #ddd;
+    stroke: #0074d9;
+    stroke-width: 50;
+    stroke-dasharray: 0 158;
+    transition: stroke-dasharray 3s ease;
+  }
+  
+  svg {
+    margin: 0 auto;
+    transform: rotate(-90deg);
+    background: #ddd;
+    border-radius: 50%;
+    display: block;
+  }
+}
+
+
+
+/********************* Afiliados ******************/
+.afiliados-home{
+  width: col(18);
+  height: 100vh;
+  background-image: url(../img/afiliados.jpg);
+  background-size: cover;
+  position: relative;
+  &.partners{
+    background-image: url(../img/socios.jpg);
+  }
+  .container{
+    max-width: $min-width;
+    margin: auto;
+    width: col(9);
+    position: absolute;
+    bottom: col(2);
+    left: col(1 );
+    h1,p{
+      color: $white;
+    }
+    p{
+      max-width: 500px;
+    }
+    >div{
+      margin-top: 20px;
+      display: flex;
+      .button{
+        margin: 0 25px;
+        
+      }
+    }
+  }
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+	box-sizing: border-box;
+}
+*:before,
+*:after{
+	box-sizing: border-box;
+}
+html,
+body{
+	min-height: 100%;
+}
+
+.beneficios{
+  width: col(18);
+  height: 100vh;
+  
+  h1{
+    color: $blue;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+  .containerss{
+    margin: 4% auto;
+    width: 210px;
+    height: 140px;
+    position: relative;
+    perspective: 1000px;
+    #carousel{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      animation: rotation 15s infinite linear;
+      transition: all .5s ease;
+      &.active{
+        transform: rotateY(72deg);
+      }
+      figure{
+        display: block;
+        position: absolute;
+        width: 250px;
+        height: 300px;
+        left: 10px;
+        top: 10px;
+        background-color: $white;
+        overflow: hidden;
+        box-shadow: $boxShadow;
+        padding: 25px;
+        
+        svg{
+          width: 125px;
+          display: block;
+          margin:auto;
+        }
+        h3{
+          margin-top: 25px;
+          text-align: center;
+          color: $green;
+        }
+      }
+    }
+  }
+}
+
+.arrow-left{
+  // width: 50px;
+  // height: 50px;
+  // background-color: red;
+}
+
+.arrow-right{
+  // width: 50px;
+  // height: 50px;
+  // background-color: blue;
+}
+
+#carousel figure:nth-child(1){transform: rotateY(0deg) translateZ(288px);}
+#carousel figure:nth-child(2) { transform: rotateY(72deg) translateZ(288px);}
+#carousel figure:nth-child(3) { transform: rotateY(144deg) translateZ(288px);}
+#carousel figure:nth-child(4) { transform: rotateY(214deg) translateZ(288px);}
+#carousel figure:nth-child(5) { transform: rotateY(284deg) translateZ(288px);}
+
+@keyframes rotation{
+	from{
+		transform: rotateY(0deg);
+	}
+	to{
+		transform: rotateY(360deg);
+	}
+}
