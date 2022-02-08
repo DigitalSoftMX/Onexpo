@@ -79,8 +79,51 @@ counterz.forEach( counter => {
 });
 
 
+ async function getEvent(query, funcion) {
+  temp = false;
+  const yourServerUrl = 'https://api-us-east-1.graphcms.com/v2/ckxrslv5g1dga01z93loq8v5e/master'
+  const yourQuery = {
+      query: `query getEvent {
+        event(orderBy: createdAt_DESC, first: 1) {
+          id
+          titleEvent
+          front_page {
+            url
+          }
+          back_page {
+            url
+          }
+          description
+          date_event
+          short_description
+        }
+      }
+      `
+  };
+
+  const xhr = new XMLHttpRequest();
+  xhr.responseType = 'json';
+  xhr.open('POST', yourServerUrl,true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.onloadend = function() {                                                         //(callback function)this function runs after xhttp.open because we have asynchronous data sending so as soon as the data is recieved this is run
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status == 200) {
+      console.log(xhr.response);
+      document.getElementById('titleEvent').innerHTML = xhr.response['data']['event'][0]['titleEvent'];
+      document.getElementById('short_description').innerHTML = xhr.response['data']['event'][0]['short_description'];
+    
+      var element = document.getElementById('eventBackground');
+      element.style['background-image'] = 'url('+xhr.response['data']['event'][0]['front_page']['url']+')';
+
+    }
+  };
+  xhr.send(JSON.stringify(yourQuery));
+}
 
 
+
+function init() {
+  getEvent();
+}
 
 
 
@@ -100,9 +143,8 @@ $(document).ready(function() {
 
   //funcion de la galeria de noticias
   $(".card").click(function () {
-    
     $(this).toggleClass("active");   
-});
+  });
 
 });
 

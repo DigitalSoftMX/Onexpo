@@ -29,7 +29,7 @@
 
 </head>
 
-<body>
+<body onload="init()">
 
   <nav class="nav">
     <div class="container">
@@ -214,14 +214,11 @@
     </div>
   </section>
 
-  <section class="expo">
+  <section class="expo" id="eventBackground">
     <div class="container">
       <div class="left">
-        <h2 class="text">Uniti Expo</h2>
-        <p class="text">
-          UNITI es una feria líder en Europa para para la industria minorista de combustibles y lavado
-          de autos. El programa de ponencias y talleres, el formato compacto de tres días y la…
-        </p>
+        <h2 class="text" id="titleEvent"></h2>
+        <p class="text"  id="short_description"></p>
       </div>
       <div class="right">
         <button class="button">Ver más</button>
