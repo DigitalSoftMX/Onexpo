@@ -275,25 +275,28 @@ body {
 /********************* Home ******************/
 .index {
   width: 100%;
-  height: 100vh;
   background-size: contain;
 }
 
 .index video {
   width: 100%;
-  height: auto;
+  height: 100%;
+}
+
+lottie-player {
+  position: absolute;
 }
 
 .unete {
-  width: 88.88889%;
-  margin: 5.55556%;
-  height: 90vh;
+  width: 100%;
+  padding: 100px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 .unete .container {
@@ -744,6 +747,8 @@ body {
   margin-top: 100px;
   margin-bottom: 100px;
   width: 100%;
+  height: 100vh;
+  position: relative;
 }
 
 @media screen and (max-width: 850px) {
@@ -765,9 +770,48 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+}
+
+.directivos .container .prev {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  z-index: 9999;
+}
+
+.directivos .container .next {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  z-index: 9999;
+}
+
+.directivos .container .slid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: absolute;
+  width: 200vw;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.directivos .container .slid.next {
+  right: 0%;
+}
+
+.directivos .container .slid.prev {
+  left: 0%;
 }
 
 @media screen and (max-width: 850px) {
@@ -783,11 +827,11 @@ body {
   cursor: pointer;
   margin: 0 10px;
   border-radius: 50px;
+  width: 90px;
   height: 450px;
   overflow: hidden;
   background-size: cover;
   position: relative;
-  width: 10%;
   -webkit-transition: all .8s ease;
   transition: all .8s ease;
 }
@@ -912,7 +956,7 @@ body {
 }
 
 .directivos .container .item.active {
-  width: 80%;
+  width: 30%;
   -webkit-transition: all .8s ease;
   transition: all .8s ease;
   border-radius: 10px;

@@ -27,6 +27,13 @@ $('.slider-info').slick({
   variableWidth: true
 });
 
+$('.prev').click(function () {
+  $('.slid').toggleClass('prev');
+});
+
+$('.next').click(function () {
+  $('.slid').toggleClass('next');
+});
 
 $('.burguer').click(function () {
   $('.menu').toggleClass('active');
