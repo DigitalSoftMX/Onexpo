@@ -117,8 +117,8 @@ counterz.forEach( counter => {
         element.style['background-image'] = 'url('+xhr.response['data']['event'][0]['front_page']['url']+')';
   
       }else{
-        //document.getElementById('titleEvent').innerHTML = xhr.response['data']['event'][0]['titleEvent'];
-        //document.getElementById('description').innerHTML = xhr.response['data']['event'][0]['description'];
+        document.getElementById('titleEvent').innerHTML = xhr.response['data']['event'][0]['titleEvent'];
+        document.getElementById('description').innerHTML = xhr.response['data']['event'][0]['description'];
         //var tempDate = xhr.response['data']['event'][0]['date_event'].split("T", 3);
         //document.getElementById('date').innerHTML = tempDate[0];
 
