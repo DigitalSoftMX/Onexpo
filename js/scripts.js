@@ -79,7 +79,7 @@ counterz.forEach( counter => {
 });
 
 
- async function getEvent(query, funcion) {
+ async function getEvent(option) {
   temp = false;
   const yourServerUrl = 'https://api-us-east-1.graphcms.com/v2/ckxrslv5g1dga01z93loq8v5e/master'
   const yourQuery = {
@@ -105,16 +105,28 @@ counterz.forEach( counter => {
   xhr.responseType = 'json';
   xhr.open('POST', yourServerUrl,true);
   xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.onloadend = function() {                                                         //(callback function)this function runs after xhttp.open because we have asynchronous data sending so as soon as the data is recieved this is run
+  xhr.onloadend = function() {             
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status == 200) {
       console.log(xhr.response);
-      document.getElementById('titleEvent').innerHTML = xhr.response['data']['event'][0]['titleEvent'];
-      document.getElementById('short_description').innerHTML = xhr.response['data']['event'][0]['short_description'];
-    
-      var element = document.getElementById('eventBackground');
-      element.style['background-image'] = 'url('+xhr.response['data']['event'][0]['front_page']['url']+')';
+      if(option == 1){
 
-    }
+        document.getElementById('titleEvent').innerHTML = xhr.response['data']['event'][0]['titleEvent'];
+        document.getElementById('short_description').innerHTML = xhr.response['data']['event'][0]['short_description'];
+      
+        var element = document.getElementById('eventBackground');
+        element.style['background-image'] = 'url('+xhr.response['data']['event'][0]['front_page']['url']+')';
+  
+      }else{
+        //document.getElementById('titleEvent').innerHTML = xhr.response['data']['event'][0]['titleEvent'];
+        //document.getElementById('description').innerHTML = xhr.response['data']['event'][0]['description'];
+        //var tempDate = xhr.response['data']['event'][0]['date_event'].split("T", 3);
+        //document.getElementById('date').innerHTML = tempDate[0];
+
+        var image = document.getElementById("eventBackground");
+        image.src = xhr.response['data']['event'][0]['back_page']['url'];
+
+      }
+    } 
   };
   xhr.send(JSON.stringify(yourQuery));
 }
@@ -122,9 +134,13 @@ counterz.forEach( counter => {
 
 
 function init() {
-  getEvent();
+  getEvent(1);
 }
 
+
+function initEvent() {
+  getEvent(2);
+}
 
 
 $(document).ready(function() {
