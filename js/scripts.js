@@ -132,12 +132,12 @@ counterz.forEach( counter => {
 }
 
 
-
+// esta funcion se ejecuta en el body del index
 function init() {
   getEvent(1);
 }
 
-
+// esta funcion se ejecuta en el body de event
 function initEvent() {
   getEvent(2);
 }
