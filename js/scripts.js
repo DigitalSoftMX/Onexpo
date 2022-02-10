@@ -27,11 +27,21 @@ $('.slider-info').slick({
   variableWidth: true
 });
 
-$('.prev').click(function () {
+$('.slider-directivos').slick({
+  pauseOnHover:false,
+  dots: false,
+  arrows:true,
+  autoplay: false,
+  speed: 1000,
+  slidesToShow: 5,
+  slidesToScroll: 1
+});
+
+$('.prevv').click(function () {
   $('.slid').toggleClass('prev');
 });
 
-$('.next').click(function () {
+$('.nextt').click(function () {
   $('.slid').toggleClass('next');
 });
 
@@ -107,7 +117,7 @@ counterz.forEach( counter => {
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.onloadend = function() {             
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status == 200) {
-      console.log(xhr.response);
+      //console.log(xhr.response);
       if(option == 1){
 
         document.getElementById('titleEvent').innerHTML = xhr.response['data']['event'][0]['titleEvent'];
@@ -153,7 +163,7 @@ async function getBannerEvent() {
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.onloadend = function() {             
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status == 200) {
-      console.log(xhr.response);
+      //console.log(xhr.response);
         var element = document.getElementById('bannerBackground');
         element.style['background-image'] = 'url('+xhr.response['data']['banners'][0]['imageBanner']['url']+')';
       
@@ -162,46 +172,46 @@ async function getBannerEvent() {
   xhr.send(JSON.stringify(yourQuery));
 }
 
-
 // esta funcion se ejecuta en el body del index
 function init() {
   getEvent(1);
+  getSlider();
 }
 
 // esta funcion se ejecuta en el body de event
 function initEvent() {
   getEvent(2);
   getBannerEvent();
+  
 }
 
-
-async function getSlider(query, funcion) {
+async function getSlider() {
   temp = false;
   const yourServerUrl = 'https://api-us-east-1.graphcms.com/v2/ckxrslv5g1dga01z93loq8v5e/master'
   const yourQuery = {
-      query: `query getSlider {
-        slider(where: {}) {
-          texto
-          imagen {
-            url
-          }
-          id
+    query: `query MyQuery {
+      sliders {
+        imagen {
+          url
         }
+        texto
       }
-      `
+    }
+    
+    `
   };
   const xhr = new XMLHttpRequest();
   xhr.responseType = 'json';
   xhr.open('POST', yourServerUrl,true);
   xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.onloadend = function() {                                                         //(callback function)this function runs after xhttp.open because we have asynchronous data sending so as soon as the data is recieved this is run
+  xhr.onloadend = function() {             
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status == 200) {
       console.log(xhr.response);
-      document.getElementById('slidertitle').innerHTML = xhr.response['data']['event'][0]['titleEvent'];
-      var element = document.getElementById('eventBackground');
-      element.style['background-image'] = 'url('+xhr.response['data']['event'][0]['front_page']['url']+')';
-
-    }
+        document.getElementById('slidertitle').innerHTML = xhr.response['data']['sliders'][0]['texto'];
+        
+        var image = document.getElementById("sliderimg");
+        image.src = xhr.response['data']['sliders'][0]['imagen']['url'];
+    } 
   };
   xhr.send(JSON.stringify(yourQuery));
 }
