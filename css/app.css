@@ -97,7 +97,6 @@ p.especial {
 }
 
 .button {
-  z-index: 100;
   background: #19375E;
   font-family: 'NunitoBold';
   font-size: 16px;
@@ -159,7 +158,6 @@ body {
   left: 0;
   z-index: 999;
   width: 100%;
-  mix-blend-mode: exclusion;
   background-color: rgba(0, 0, 0, 0.527);
 }
 
@@ -186,6 +184,19 @@ body {
 @media screen and (max-width: 1400px) {
   .nav .container {
     max-width: 1100px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .nav .container {
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .nav .container {
+    padding: 0;
+    margin: 0;
   }
 }
 
@@ -242,11 +253,11 @@ body {
   right: -100%;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
-  top: 144px;
+  top: 82px;
   background: #19375E;
   text-align: center;
   width: 100%;
-  height: 70%;
+  height: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -289,18 +300,7 @@ lottie-player {
   position: absolute;
 }
 
-.animationSVG{
-  position: absolute;
-  overflow: hidden;
-  right: 0;
-  width: 700px;
-  height: 700px;
-  z-index: -1;
-}
-
 .unete {
-  position: relative;
-  overflow: hidden;
   width: 100%;
   padding: 100px 0;
   display: -webkit-box;
@@ -309,6 +309,7 @@ lottie-player {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 .unete .container {
@@ -367,12 +368,11 @@ lottie-player {
 }
 
 .unete .right .card {
-  background: white;
- 
+  background-color: #ffffff;
   width: 90%;
   height: 250px;
-  -webkit-box-shadow:0 0.75rem 2rem 0 rgb(0 0 0 / 5%);
-          box-shadow: 0 0.75rem 2rem 0 rgb(0 0 0 / 5%);
+  -webkit-box-shadow: 0px 0px 20px -6px #737373;
+          box-shadow: 0px 0px 20px -6px #737373;
   border-radius: 15px;
   padding: 50px;
   display: -webkit-box;
@@ -388,7 +388,6 @@ lottie-player {
   position: relative;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
-  
 }
 
 .unete .right .card .svg {
@@ -504,23 +503,11 @@ lottie-player {
 }
 
 .expo {
-  position: relative;
   width: 100%;
   background-image: url(../img/grupo347.jpg);
   background-size: cover;
   padding: 5.55556%;
   background-attachment: fixed;
-}
-
-#color-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #37B086;
-  opacity: 0.6;
-  z-index: 11;
 }
 
 .expo .container {
@@ -545,7 +532,6 @@ lottie-player {
 
 .expo .container .left {
   width: 72.22222%;
-  z-index: 11;
 }
 
 @media screen and (max-width: 850px) {
@@ -557,7 +543,6 @@ lottie-player {
 
 .expo .container .right {
   width: 27.77778%;
-  z-index: 11;
 }
 
 @media screen and (max-width: 850px) {
@@ -1160,11 +1145,6 @@ lottie-player {
   background-color: transparent;
   border: solid 1px #818a91 !important;
   border-radius: 10px;
-}
-
-input::placeholder, textarea::placeholder {
-  color: white;
-  /*font-size: 1em;*/
 }
 
 .contacto h2 {
