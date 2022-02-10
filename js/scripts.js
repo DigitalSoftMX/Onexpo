@@ -121,11 +121,42 @@ counterz.forEach( counter => {
         document.getElementById('description').innerHTML = xhr.response['data']['event'][0]['description'];
         //var tempDate = xhr.response['data']['event'][0]['date_event'].split("T", 3);
         //document.getElementById('date').innerHTML = tempDate[0];
-
-        var image = document.getElementById("eventBackground");
-        image.src = xhr.response['data']['event'][0]['back_page']['url'];
+        var element = document.getElementById('eventBackground');
+        element.style['background-image'] = 'url('+xhr.response['data']['event'][0]['back_page']['url']+')';
+        //var image = document.getElementById("eventBackground");
+        //image.src = xhr.response['data']['event'][0]['back_page']['url'];
 
       }
+    } 
+  };
+  xhr.send(JSON.stringify(yourQuery));
+}
+
+
+async function getBannerEvent() {
+  temp = false;
+  const yourServerUrl = 'https://api-us-east-1.graphcms.com/v2/ckxrslv5g1dga01z93loq8v5e/master'
+  const yourQuery = {
+      query: `query Banner {
+        banners {
+          imageBanner {
+            url
+          }
+        }
+      }
+      `
+  };
+
+  const xhr = new XMLHttpRequest();
+  xhr.responseType = 'json';
+  xhr.open('POST', yourServerUrl,true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.onloadend = function() {             
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status == 200) {
+      console.log(xhr.response);
+        var element = document.getElementById('bannerBackground');
+        element.style['background-image'] = 'url('+xhr.response['data']['banners'][0]['imageBanner']['url']+')';
+      
     } 
   };
   xhr.send(JSON.stringify(yourQuery));
@@ -140,6 +171,7 @@ function init() {
 // esta funcion se ejecuta en el body de event
 function initEvent() {
   getEvent(2);
+  getBannerEvent();
 }
 
 
