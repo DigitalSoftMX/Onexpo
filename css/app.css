@@ -911,6 +911,10 @@ lottie-player {
   .directivos .container .item .texto h1 {
     font-size: 1.2rem;
   }
+
+  .hidden-mobile {
+    display: none !important;
+  }
 }
 
 .directivos .container .item .texto h1:first-of-type {
