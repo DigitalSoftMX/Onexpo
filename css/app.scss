@@ -121,6 +121,7 @@ p {
 }
 
 @mixin button($bg) {
+  z-index: 100;
   background: $bg;
   font-family: 'NunitoBold';
   font-size: 16px;
@@ -398,7 +399,17 @@ lottie-player{
   }
 }
 
+.animationSVG{
+  position: absolute;
+  overflow: hidden;
+  right: 0;
+  width: 700px;
+  height: 700px;
+  z-index: -1;
+}
+
 .expo{
+  position: relative;
   width: col(18);
   background-image: url(../img/grupo347.jpg);
   background-size: cover;
@@ -420,6 +431,7 @@ lottie-player{
       }
     }
     .right{
+      z-index: 1;
       width: col(5);
       @media screen and (max-width: $md) {
         width: col(18);
@@ -534,7 +546,8 @@ lottie-player{
         .left{
           width: col(8);
           img{
-            filter: blur(3px);
+            filter: blur(5px);
+
             
           }
         }
@@ -571,6 +584,17 @@ lottie-player{
   }
 
     
+}
+
+#color-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #37B086;
+  opacity: 0.6;
+  z-index: 0;
 }
 
 .directivos{

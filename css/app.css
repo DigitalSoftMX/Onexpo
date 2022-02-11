@@ -159,7 +159,6 @@ body {
   left: 0;
   z-index: 999;
   width: 100%;
-  mix-blend-mode: exclusion;
   background-color: rgba(0, 0, 0, 0.527);
 }
 
@@ -289,18 +288,7 @@ lottie-player {
   position: absolute;
 }
 
-.animationSVG{
-  position: absolute;
-  overflow: hidden;
-  right: 0;
-  width: 700px;
-  height: 700px;
-  z-index: -1;
-}
-
 .unete {
-  position: relative;
-  overflow: hidden;
   width: 100%;
   padding: 100px 0;
   display: -webkit-box;
@@ -309,6 +297,7 @@ lottie-player {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 .unete .container {
@@ -367,12 +356,11 @@ lottie-player {
 }
 
 .unete .right .card {
-  background: white;
- 
+  background-color: #ffffff;
   width: 90%;
   height: 250px;
-  -webkit-box-shadow:0 0.75rem 2rem 0 rgb(0 0 0 / 5%);
-          box-shadow: 0 0.75rem 2rem 0 rgb(0 0 0 / 5%);
+  -webkit-box-shadow: 0px 0px 20px -6px #737373;
+          box-shadow: 0px 0px 20px -6px #737373;
   border-radius: 15px;
   padding: 50px;
   display: -webkit-box;
@@ -388,7 +376,6 @@ lottie-player {
   position: relative;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
-  
 }
 
 .unete .right .card .svg {
@@ -503,6 +490,15 @@ lottie-player {
   color: #37B086;
 }
 
+.animationSVG {
+  position: absolute;
+  overflow: hidden;
+  right: 0;
+  width: 700px;
+  height: 700px;
+  z-index: -1;
+}
+
 .expo {
   position: relative;
   width: 100%;
@@ -510,17 +506,6 @@ lottie-player {
   background-size: cover;
   padding: 5.55556%;
   background-attachment: fixed;
-}
-
-#color-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #37B086;
-  opacity: 0.6;
-  z-index: 11;
 }
 
 .expo .container {
@@ -545,7 +530,6 @@ lottie-player {
 
 .expo .container .left {
   width: 72.22222%;
-  z-index: 11;
 }
 
 @media screen and (max-width: 850px) {
@@ -556,8 +540,8 @@ lottie-player {
 }
 
 .expo .container .right {
+  z-index: 1;
   width: 27.77778%;
-  z-index: 11;
 }
 
 @media screen and (max-width: 850px) {
@@ -697,8 +681,8 @@ lottie-player {
 }
 
 .noticias .container .slider-noticias .slide .left img {
-  -webkit-filter: blur(3px);
-          filter: blur(3px);
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
 }
 
 .noticias .container .slider-noticias .slide .right {
@@ -730,6 +714,7 @@ lottie-player {
 }
 
 .noticias .container .slider-noticias .slide .right .button {
+  z-index: 100;
   background: #37B086;
   font-family: 'NunitoBold';
   font-size: 16px;
@@ -769,6 +754,17 @@ lottie-player {
 .noticias .container .slider-noticias .slick-current .left img {
   -webkit-filter: blur(0) !important;
           filter: blur(0) !important;
+}
+
+#color-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #37B086;
+  opacity: 0.6;
+  z-index: 0;
 }
 
 .directivos {
@@ -925,10 +921,6 @@ lottie-player {
 @media screen and (max-width: 580px) {
   .directivos .container .item .texto h1 {
     font-size: 1.2rem;
-  }
-
-  .hidden-mobile {
-    display: none !important;
   }
 }
 
@@ -1166,11 +1158,6 @@ lottie-player {
   border-radius: 10px;
 }
 
-input::placeholder, textarea::placeholder {
-  color: white;
-  /*font-size: 1em;*/
-}
-
 .contacto h2 {
   margin-bottom: 25px;
   color: #ffffff;
@@ -1266,6 +1253,7 @@ input::placeholder, textarea::placeholder {
 }
 
 .contacto .container .left > div .button {
+  z-index: 100;
   background: #37B086;
   font-family: 'NunitoBold';
   font-size: 16px;
@@ -1428,6 +1416,7 @@ footer p {
 }
 
 .news-home .button {
+  z-index: 100;
   background: transparent;
   font-family: 'NunitoBold';
   font-size: 16px;
@@ -1694,6 +1683,7 @@ footer p {
 }
 
 .afiliados-home .container > div .button {
+  z-index: 100;
   background: transparent;
   font-family: 'NunitoBold';
   font-size: 16px;
