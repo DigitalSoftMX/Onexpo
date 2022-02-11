@@ -912,7 +912,7 @@ lottie-player{
 .socios{
   width: col(18);
   max-width: $min-width;
-    margin: auto;
+  margin: 0 auto 50px auto;
   h1{
     margin-bottom: 25px;
     color: $green;
@@ -921,15 +921,16 @@ lottie-player{
 
   .container{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    @media screen and (max-width: $md) {
-      grid-template-columns: repeat(2,1fr);
-    }
+
+    // @media screen and (max-width: $md) {
+    //   grid-template-columns: repeat(2,1fr);
+    // }
 
     img{
       justify-self: center;
       align-self: center;
       width: 125px;
+      margin: auto;
     }
   }
 }

@@ -1,5 +1,7 @@
 
 
+
+
 $(".slider-directivos").slick({
   pauseOnHover: false,
   dots: false,
@@ -288,12 +290,25 @@ async function getLogos() {
         document.querySelector("#containerSocios").insertAdjacentHTML(
           "beforeend",
           `
+            <div class="slide">
             <img src="` +
             post[i]["imagenlogo"]["url"] +
             `">
+            </div>
           `
         );
       }
+      $(".slider-logos").slick({
+        pauseOnHover: false,
+        dots: false,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        speed: 1000,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        
+      });
     }
   };
   xhr.send(JSON.stringify(yourQuery));
