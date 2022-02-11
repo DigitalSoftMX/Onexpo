@@ -401,30 +401,30 @@ async function getNew() {
     "https://api-us-east-1.graphcms.com/v2/ckxrslv5g1dga01z93loq8v5e/master";
   const yourQuery = {
     query:
-      `query MyQuery {
-        postsConnection(where: {id: "` +
-      idTem[1] +
-      `"}) {
-          edges {
-            node {
-              id
-              title
-              featuredImage {
-                url
-              }
-              content {
-                html
-              }
-              createdAt
-              categories {
-                name
-              }
+    `query MyQuery {
+      postsConnection(where: {id: "` +
+    idTem[1] +
+    `"}) {
+        edges {
+          node {
+            id
+            title
+            featuredImage {
+              url
             }
-            cursor
+            content {
+              html
+            }
+            createdAt
+            categories {
+              name
+            }
           }
+          cursor
         }
       }
-    `
+    }
+  `
   };
 
   const xhr = new XMLHttpRequest();
@@ -454,11 +454,13 @@ async function getNew() {
         );
       }
       //}
-      
-    } 
+
+    }
   };
   xhr.send(JSON.stringify(yourQuery));
 }
+
+
 
 // esta funcion se ejecuta en el body del index
 function init() {
@@ -467,6 +469,7 @@ function init() {
   getSlider();
   getBannerSlider()
   getLogos()
+
 }
 
 // esta funcion se ejecuta en el body de event

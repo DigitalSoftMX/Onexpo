@@ -1695,6 +1695,10 @@ footer p {
      object-fit: cover;
 }
 
+.news-two .container .news p {
+  margin-bottom: 15px;
+}
+
 .news-two .container .news h3 {
   text-transform: initial;
   margin-bottom: 25px;
