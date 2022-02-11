@@ -43,7 +43,9 @@
       <a href="noticias.html">
         <p>Noticias</p>
       </a>
-      <a href="ext/pdf.pdf" target="_blank"><p>Revista</p></a>
+      <a href="ext/pdf.pdf" target="_blank">
+        <p>Revista</p>
+      </a>
       <a href="contacto.html">
         <p>Contacto</p>
       </a>
@@ -102,10 +104,8 @@
   </section>
 
   <section class="news-two">
-    <div class="container">
-
-
-      <div class="news a text">
+    <div class="container" id="newsContainer">
+      <!-- <div class="news a text">
         <img src="img/Enmascarar grupo 2.jpg">
         <div class="texto">
           <div class="date">
@@ -118,106 +118,7 @@
             imprentas y archivos de texto. Lorem Ipsum ha sido el
             texto de relleno estándar de las industrias</p>
         </div>
-
-      </div>
-
-      <div class="news b text">
-        <img src="img/Enmascarar grupo 3.jpg">
-        <div class="texto">
-          <div class="date">
-            <p>17.11.21</p>
-          </div>
-          <h3>SENER ha cancelado 1866 permisos
-            de importación de hidrocarburos
-          </h3>
-          <p>Lorem Ipsum es simplemente el texto de relleno de las
-            imprentas y archivos de texto. Lorem Ipsum ha sido el
-            texto de relleno estándar de las industrias</p>
-        </div>
-
-      </div>
-
-      <div class="news c text">
-        <img src="img/Enmascarar grupo 4.jpg">
-        <div class="texto">
-          <div class="date">
-            <p>17.11.21</p>
-          </div>
-          <h3>SENER ha cancelado 1866 permisos
-            de importación de hidrocarburos
-          </h3>
-          <p>Lorem Ipsum es simplemente el texto de relleno de las
-            imprentas y archivos de texto. Lorem Ipsum ha sido el
-            texto de relleno estándar de las industrias</p>
-        </div>
-
-      </div>
-
-      <div class="news d text">
-        <img src="img/Enmascarar grupo 5.jpg">
-        <div class="texto">
-          <div class="date">
-            <p>17.11.21</p>
-          </div>
-          <h3>SENER ha cancelado 1866 permisos
-            de importación de hidrocarburos
-          </h3>
-          <p>Lorem Ipsum es simplemente el texto de relleno de las
-            imprentas y archivos de texto. Lorem Ipsum ha sido el
-            texto de relleno estándar de las industrias</p>
-        </div>
-
-      </div>
-
-      <div class="news e text">
-        <img src="img/field-with-oil-pump-jacks-surrounded-by-greenery-under-cloudy-sky-and-sunlight.jpg">
-        <div class="texto">
-          <div class="date">
-            <p>17.11.21</p>
-          </div>
-          <h3>SENER ha cancelado 1866 permisos
-            de importación de hidrocarburos
-          </h3>
-          <p>Lorem Ipsum es simplemente el texto de relleno de las
-            imprentas y archivos de texto. Lorem Ipsum ha sido el
-            texto de relleno estándar de las industrias</p>
-        </div>
-
-      </div>
-
-      <div class="news f text">
-        <img src="img/Enmascarar grupo 2.jpg">
-        <div class="texto">
-          <div class="date">
-            <p>17.11.21</p>
-          </div>
-          <h3>SENER ha cancelado 1866 permisos
-            de importación de hidrocarburos
-          </h3>
-          <p>Lorem Ipsum es simplemente el texto de relleno de las
-            imprentas y archivos de texto. Lorem Ipsum ha sido el
-            texto de relleno estándar de las industrias</p>
-        </div>
-
-      </div>
-
-      <div class="news g text">
-        <img src="img/Enmascarar grupo 2.jpg">
-        <div class="texto">
-          <div class="date">
-            <p>17.11.21</p>
-          </div>
-          <h3>SENER ha cancelado 1866 permisos
-            de importación de hidrocarburos
-          </h3>
-          <p>Lorem Ipsum es simplemente el texto de relleno de las
-            imprentas y archivos de texto. Lorem Ipsum ha sido el
-            texto de relleno estándar de las industrias</p>
-        </div>
-
-      </div>
-
-
+      </div> -->
     </div>
   </section>
 
@@ -284,6 +185,68 @@
 
   </section>
 
+  <script>
+
+    async function getAllNews() {
+      temp = false;
+      const yourServerUrl =
+        "https://api-us-east-1.graphcms.com/v2/ckxrslv5g1dga01z93loq8v5e/master";
+      const yourQuery = {
+        query: `query MyQuery {
+          posts {
+            featuredImage {
+              url
+            }
+            title
+            excerpt
+            id
+          }
+        }
+      `,
+      };
+      id = "hhhhh";
+      const xhr = new XMLHttpRequest();
+      xhr.responseType = "json";
+      xhr.open("POST", yourServerUrl, true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.onloadend = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status == 200) {
+          //console.log(xhr.response['data']['postsConnection']['edges']);
+          const post = xhr.response["data"]["posts"];
+          for (var i = 0; i < post.length; i++) {
+            console.log(post[i]);
+            document.querySelector("#newsContainer").insertAdjacentHTML(
+              "beforeend",
+              `<div class="news a text">
+              <img src="` +
+              post[i]["featuredImage"]["url"] +
+              `">
+            <div class="texto">
+                <h3>` +
+              post[i]["title"] +
+              `</h3>
+              <p>` +
+              post[i]["excerpt"] +
+              `</p>
+                <a href='noticia.html?id=` +
+              post[i]["id"] +
+              `' class="button">Ver más</a>
+            </div>
+          </div>`
+            );
+          }
+        }
+      };
+      xhr.send(JSON.stringify(yourQuery));
+    }
+
+
+
+    getAllNews()
+    
+
+
+  </script>
   <script type="text/javascript" src="js/slick.js"></script>
 
   <script src="js/scripts.js"></script>

@@ -714,7 +714,6 @@ lottie-player {
 .banner {
   background-color: #19375E;
   width: 100%;
-  padding: 0;
 }
 
 .noticias {
@@ -1199,7 +1198,7 @@ lottie-player {
 .socios {
   width: 100%;
   max-width: 1100px;
-  margin: auto;
+  margin: 0 auto 50px auto;
 }
 
 .socios h1 {
@@ -1211,15 +1210,6 @@ lottie-player {
 .socios .container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
-}
-
-@media screen and (max-width: 850px) {
-  .socios .container {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 .socios .container img {
@@ -1229,6 +1219,7 @@ lottie-player {
       -ms-grid-row-align: center;
       align-self: center;
   width: 125px;
+  margin: auto;
 }
 
 .contacto {
@@ -1693,6 +1684,10 @@ footer p {
   max-height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.news-two .container .news p {
+  margin-bottom: 15px;
 }
 
 .news-two .container .news h3 {
