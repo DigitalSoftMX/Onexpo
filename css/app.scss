@@ -106,13 +106,13 @@ h3 {
   color: $color;
   margin: 0;
   font-weight: 400;
- 
+
 }
 
 p {
   @include p();
   &.especial{
-    
+
     font-family: 'NunitoBold';
     @media screen and (max-width: $lg) {
       @include p(initial,.9);
@@ -154,7 +154,7 @@ p {
 
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 img {
@@ -240,8 +240,8 @@ body {
    }
    &.active{
     right: 0;
-    
-   
+
+
    }
    p{
      color: $white;
@@ -318,7 +318,7 @@ lottie-player{
       align-items: center;
       position: relative;
       transition: all .5s ease;
-      
+
       .svg{
         width: 100px;
         svg{
@@ -367,7 +367,7 @@ lottie-player{
       &:hover{
         background-color: $blue;
         flex: 1;
-        
+
         transition: all .5s ease;
         &.afiliados{
           height: 350px;
@@ -409,6 +409,73 @@ lottie-player{
   width: 700px;
   height: 700px;
   z-index: -1;
+}
+
+.slider-banner{
+  position: relative;
+  &:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 99%;
+    z-index: 9;
+    background-color: #00000075;
+    pointer-events: none
+  }
+  img{
+    width: 100% !important;
+  }
+  .slick-dots{
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    z-index: 10;
+    li{
+      width: 12px;
+      height: 12px;
+      background-color: $white;
+      border-radius: 50%;
+      margin: 0 10px;
+      cursor: pointer;
+      position: relative;
+      &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        border:#ffffff;
+        transition: all .3s ease;
+      }
+      button{
+        font-size: 0;
+      }
+      &.slick-active{
+        &::after{
+          content: "";
+          display: block;
+          position: absolute;
+          top: -6px;
+          left: -6px;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          border: solid 1px #ffffff;
+        }
+      }
+    }
+  }
 }
 
 .expo{
@@ -453,7 +520,7 @@ lottie-player{
   width: col(18);
   max-width: $min-width;
   margin: auto;
-  
+
   .container{
     padding: col(1);
     display: grid;
@@ -462,9 +529,9 @@ lottie-player{
     h2{
       color: $green;
       text-align: center;
-      
+
       margin-top: 25px;
-      
+
     }
     p{
       color: $blue;
@@ -498,7 +565,7 @@ lottie-player{
     stroke-dasharray: 0 158;
     transition: stroke-dasharray 3s ease;
   }
-  
+
   svg {
     margin: 0 auto;
     transform: rotate(-90deg);
@@ -518,7 +585,7 @@ lottie-player{
     margin-bottom: 50px;
   }
   .container{
-    
+
     position: relative;
 
     .arrow-container{
@@ -551,7 +618,7 @@ lottie-player{
           img{
             filter: blur(5px);
 
-            
+
           }
         }
         .right{
@@ -581,12 +648,12 @@ lottie-player{
             filter: blur(0) !important;
           }
         }
-        
+
       }
     }
   }
 
-    
+
 }
 
 #color-overlay {
@@ -602,9 +669,9 @@ lottie-player{
 
 .directivos{
   margin-top: 100px;
-  margin-bottom: 100px;
+
   width: col(18);
-  height: 100vh;
+  height: 80vh;
   position: relative;
 
   @media screen and (max-width: $md) {
@@ -617,11 +684,28 @@ lottie-player{
       margin-bottom: 50px;
     }
     .container{
-      max-width: 1200px;
+      max-width: $max-width;
       margin: auto;
       display: flex;
       position: relative;
-
+      .slick-prev{
+        width: 200px;
+        height: 50px;
+        margin: auto;
+        background-image: url(../img/chevron-left-green.svg);
+        background-repeat: no-repeat;
+        background-color: $white;
+        font-size: 0;
+      }
+      .slick-next{
+        width: 200px;
+        height: 50px;
+        margin: auto;
+        background-image: url(../img/chevron-right-green.svg);
+        background-repeat: no-repeat;
+        background-color: $white;
+        font-size: 0;
+      }
       .slid{
         display: flex;
         justify-content: space-between;
@@ -647,8 +731,6 @@ lottie-player{
         overflow: hidden;
         background-size: cover;
         position: relative;
-        
-        
         transition: all .8s ease;
         @media screen and (max-width: $lg) {
           margin: 0 5px;
@@ -660,6 +742,7 @@ lottie-player{
         }
         img{
           object-fit: cover;
+          object-position: -10px;
           width: 100%;
           height: 120%;
           filter: blur(3px);
@@ -686,7 +769,7 @@ lottie-player{
             padding: 5px;
             color: $white;
             background-color:$green;
-           
+
             &.long{
               max-width: 300px;
             }
@@ -721,7 +804,7 @@ lottie-player{
           }
         }
         &.active{
-          width: 30% !important;
+          width: 100% !important;
           //flex-grow: 8;
           transition: all .8s ease;
           border-radius: 10px;
@@ -803,6 +886,7 @@ lottie-player{
       height: 50px;
       width: 350px;
       z-index: 1;
+      text-align: center;
     }
     &:after{
       content: "";
@@ -833,7 +917,7 @@ lottie-player{
     @media screen and (max-width: $md) {
       grid-template-columns: repeat(2,1fr);
     }
-    
+
     img{
       justify-self: center;
       align-self: center;
@@ -918,13 +1002,13 @@ lottie-player{
       form{
         height: 100%;
         margin-bottom: 20px;
-        
+
       }
       .input-container{
         display: flex;
         justify-content: space-between;
         margin-bottom: 20px;
-       
+
         label{
           width: 50%;
           &:first-of-type{
@@ -1011,7 +1095,7 @@ footer{
     margin: 25px 0;
   }
   .button{
-    
+
     @include button(transparent);
     margin: 0;
     border: $green 1px solid;
@@ -1020,7 +1104,7 @@ footer{
     width: col(18);
     height: 100%;
     position: relative;
-   
+
     .container{
       display: flex;
       position: absolute;
@@ -1032,7 +1116,7 @@ footer{
       top: 50%;
       left: 50%;
       z-index: 1;
-      background-size: cover;     
+      background-size: cover;
       width: 250px;
       height: 350px;
       transition: all .5s ease;
@@ -1051,14 +1135,14 @@ footer{
 
 
   .card-slider2{
-    width: col(16);    
+    width: col(16);
     position: absolute;
     top: 20%;
     display: flex;
     justify-content: space-between;
     .card{
       z-index: 1;
-      background-size: cover;     
+      background-size: cover;
       width: 250px;
       height: 350px;
       background-image: url(../img/noticias1.jpg);
@@ -1108,12 +1192,12 @@ footer{
           p{
             color: $blue;
           }
-          
+
           margin-bottom: 15px;
         }
       }
       img{
-        
+
         border-radius: 10px 10px 0 0;
         width: 100%;
         max-height: 200px;
@@ -1135,7 +1219,7 @@ footer{
           height: 500px;
         }
       }
-    
+
       &.e {
         grid-column: 2/3;
         grid-row: 2/4;
@@ -1257,7 +1341,7 @@ body{
           height: 200px;
           padding: 5px;
         }
-        
+
         svg{
           width: 125px;
           height: 100px;
