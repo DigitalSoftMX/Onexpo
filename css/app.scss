@@ -304,6 +304,10 @@ lottie-player{
     align-items: center;
     @media screen and (max-width: $lg) {
       width: col(18);
+
+    }
+    @media screen and (max-width: $md) {
+      grid-template-columns: 1fr;
     }
     .card{
       background-color: $white;
@@ -317,7 +321,10 @@ lottie-player{
       align-items: center;
       position: relative;
       transition: all .5s ease;
-
+      @media screen and (max-width: $md) {
+        height: 300px;
+        margin: 50px 0;
+      }
       .svg{
         width: 100px;
         svg{
@@ -371,7 +378,7 @@ lottie-player{
         &.afiliados{
           height: 350px;
         }
-        &.socios{
+        &.socios1{
           height: 470px;
         }
         .svg{
@@ -620,8 +627,14 @@ lottie-player{
       .slide{
         display: flex !important;
         align-items: center;
+        @media screen and (max-width: $md) {
+          flex-direction: column;
+        }
         .left{
           width: col(8);
+          @media screen and (max-width: $md) {
+            width: col(16);
+          }
           img{
             filter: blur(5px);
 
@@ -631,6 +644,9 @@ lottie-player{
         .right{
           width: col(10);
           margin: col(1 );
+          @media screen and (max-width: $md) {
+            width: col(16);
+          }
           h3{
             color: $green;
             margin-bottom: 25px;
@@ -1093,6 +1109,9 @@ footer{
   background-image: url(../img/noticias1.jpg);
   background-size: cover;
   padding: col(1);
+  @media screen and (max-width: $md) {
+    flex-direction: column;
+  }
   .date{
     color: $green;
   }
@@ -1109,22 +1128,13 @@ footer{
     border: $green 1px solid;
   }
   .card-slider{
-    width: col(18);
-    height: 100%;
+    width: col(9);
     position: relative;
-
     .container{
-      display: flex;
-      position: absolute;
-      width: 100%;
-      height: 100%;
+
     }
     .card{
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      z-index: 1;
-      background-size: cover;
+      padding: 0 15px;
       width: 250px;
       height: 350px;
       transition: all .5s ease;
@@ -1134,33 +1144,9 @@ footer{
         height: 100%;
         object-fit: cover;
       }
-      &.active{
-        z-index: 0;
-        transform: scale(10);
-      }
-    }
-  }
-
-
-  .card-slider2{
-    width: col(16);
-    position: absolute;
-    top: 20%;
-    display: flex;
-    justify-content: space-between;
-    .card{
-      z-index: 1;
-      background-size: cover;
-      width: 250px;
-      height: 350px;
-      background-image: url(../img/noticias1.jpg);
-      background-size: cover;
-      transition: all .5s ease;
-      &.active{
-        //transform: scale(10);
-        width: 100vw;
-        height: 100vh;
-        z-index: 0;
+      h3{
+        color: $white;
+        margin-top: 25px;
       }
     }
   }
