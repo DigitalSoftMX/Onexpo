@@ -160,6 +160,7 @@ body {
   z-index: 999;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.527);
+  mix-blend-mode: difference;
 }
 
 @media screen and (max-width: 850px) {
