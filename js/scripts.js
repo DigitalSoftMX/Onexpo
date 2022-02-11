@@ -540,6 +540,11 @@ $(document).ready(function () {
     $(this).addClass("active");
   });
 
+  $("#boton").click(function () {
+    $(".s1").toggleClass("active");
+    $(".s2").toggleClass("active");
+  });
+
   $(".burguer").click(function () {
     $(".responsive-nav").toggleClass("active");
   });
