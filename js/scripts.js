@@ -12,6 +12,21 @@ $(".slider-directivos").slick({
   slidesToScroll: 1,
 });
 
+$(".slider-banners").slick({
+  pauseOnHover: false,
+  dots: false,
+  arrows: false,
+  autoplay: true,
+  speed: 1000,
+  autoplaySpeed: 1800,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  centerMode: true,
+  centerPadding: "0px",
+  variableWidth: true,
+  adaptiveHeight: true
+});
+
 $(".prevv").click(function () {
   $(".slid").toggleClass("prev");
 });
@@ -102,6 +117,9 @@ async function getEvent(option) {
         var element = document.getElementById("eventBackground");
         element.style["background-image"] =
           "url(" + xhr.response["data"]["event"][0]["front_page"]["url"] + ")";
+          element.style["background-size"] = "contain";
+          element.style["background-repeat"] = "no-repeat";
+          element.style["background-position"] = "center";
       } else {
         document.getElementById("titleEvent").innerHTML =
           xhr.response["data"]["event"][0]["titleEvent"];
@@ -242,7 +260,7 @@ async function getSlider() {
             `">
             <h2>` +
             post[i]["texto"] +
-            `</h3>
+            `</h2>
           </div>`
         );
       }
@@ -307,7 +325,7 @@ async function getLogos() {
         speed: 1000,
         slidesToShow: 3,
         slidesToScroll: 1,
-        
+
       });
     }
   };
@@ -416,23 +434,22 @@ async function getNew() {
     "https://api-us-east-1.graphcms.com/v2/ckxrslv5g1dga01z93loq8v5e/master";
   const yourQuery = {
     query:
-    `query MyQuery {
-      postsConnection(where: {id: "` +
-    idTem[1] +
-    `"}) {
-        edges {
-          node {
-            id
-            title
-            featuredImage {
-              url
-            }
-            content {
-              html
-            }
-            createdAt
-            categories {
-              name
+      `query MyQuery {
+        postsConnection(where: {id: "` +idTem[1]+`"}) {
+          edges {
+            node {
+              id
+              title
+              featuredImage {
+                url
+              }
+              content {
+                html
+              }
+              createdAt
+              categories {
+                name
+              }
             }
           }
           cursor
