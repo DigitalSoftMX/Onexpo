@@ -160,12 +160,7 @@ body {
   z-index: 999;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.527);
-}
-
-@media screen and (max-width: 850px) {
-  .nav {
-    padding: 15px;
-  }
+  padding: 25px;
 }
 
 .nav .container {

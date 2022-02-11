@@ -178,9 +178,7 @@ body {
   z-index: 999;
   width: col(18);
   background-color: rgba(0, 0, 0, 0.527);
-  @media screen and (max-width: $md) {
-    padding:15px;
-   }
+  padding:25px;
   .container{
     max-width: $max-width;
     margin: 20px auto 20px auto;
