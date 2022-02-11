@@ -12,20 +12,7 @@ $(".slider-directivos").slick({
   slidesToScroll: 1,
 });
 
-$(".slider-banners").slick({
-  pauseOnHover: false,
-  dots: false,
-  arrows: false,
-  autoplay: true,
-  speed: 1000,
-  autoplaySpeed: 1800,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  centerMode: true,
-  centerPadding: "0px",
-  variableWidth: true,
-  adaptiveHeight: true
-});
+
 
 $(".prevv").click(function () {
   $(".slid").toggleClass("prev");
@@ -179,54 +166,7 @@ function initEvent() {
   getBannerEvent();
 }
 
-async function getBannerSlider() {
-  temp = false;
-  const yourServerUrl =
-    "https://api-us-east-1.graphcms.com/v2/ckxrslv5g1dga01z93loq8v5e/master";
-  const yourQuery = {
-    query: `query MyQuery {
-      sliderBanners {
-        imagenbanner {
-          url
-        }
-      }
-    }
-      `,
-  };
 
-  const xhr = new XMLHttpRequest();
-  xhr.responseType = "json";
-  xhr.open("POST", yourServerUrl, true);
-  xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.onloadend = function () {
-    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status == 200) {
-      const post = xhr.response["data"]["sliderBanners"];
-      for (var i = 0; i < post.length; i++) {
-        document.querySelector(".slider-banner").insertAdjacentHTML(
-          "beforeend",
-          `<div class="slider">
-            <img src="` +
-            post[i]["imagenbanner"]["url"] +
-            `">
-
-          </div>`
-        );
-      }
-      $(".slider-banner").slick({
-        pauseOnHover: false,
-        dots: true,
-        arrows: false,
-        autoplay: true,
-        speed: 1000,
-        fade:true,
-        autoplaySpeed: 3000,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      });
-    }
-  };
-  xhr.send(JSON.stringify(yourQuery));
-}
 
 async function getSlider() {
   temp = false;
@@ -367,7 +307,6 @@ async function getPost() {
      }
       `,
   };
-  id = "hhhhh";
   const xhr = new XMLHttpRequest();
   xhr.responseType = "json";
   xhr.open("POST", yourServerUrl, true);
@@ -377,7 +316,7 @@ async function getPost() {
       //console.log(xhr.response['data']['postsConnection']['edges']);
       const post = xhr.response["data"]["postsConnection"]["edges"];
       for (var i = 0; i < post.length; i++) {
-        console.log(post[i]);
+        //console.log(post[i]);
         document.querySelector("#newsSLider").insertAdjacentHTML(
           "beforeend",
           `<div class="slide">
@@ -417,8 +356,56 @@ async function getPost() {
         nextArrow: $(".next"),
         pauseOnHover: false,
       });
-      //var element = document.getElementById('bannerBackground');
-      //element.style['background-image'] = 'url('+xhr.response['data']['banners'][0]['imageBanner']['url']+')';
+    }
+  };
+  xhr.send(JSON.stringify(yourQuery));
+}
+
+
+async function getBannersHome() {
+  const yourServerUrl =
+    "https://api-us-east-1.graphcms.com/v2/ckxrslv5g1dga01z93loq8v5e/master";
+  const yourQuery = {
+    query: `query MyQuery {
+      bannerHomes {
+        imageBanner {
+          url
+        }
+      }
+    }`,
+  };
+  const xhr = new XMLHttpRequest();
+  xhr.responseType = "json";
+  xhr.open("POST", yourServerUrl, true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.onloadend = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status == 200) {
+      console.log(xhr.response);
+      const post = xhr.response["data"]["bannerHomes"];
+      for (var i = 0; i < post.length; i++) {
+        
+        document.querySelector("#bannerHome").insertAdjacentHTML(
+          "beforeend",
+          `<div class="slide" >
+            <img src="`+post[i]['imageBanner']['url']+`">
+          </div>`
+        );
+      }
+
+      $(".slider-banners").slick({
+        pauseOnHover: false,
+        dots: false,
+        arrows: false,
+        autoplay: true,
+        speed: 1000,
+        autoplaySpeed: 1800,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: "0px",
+        variableWidth: true,
+        adaptiveHeight: true
+      });
     }
   };
   xhr.send(JSON.stringify(yourQuery));
@@ -435,7 +422,7 @@ async function getNew() {
   const yourQuery = {
     query:
       `query MyQuery {
-        postsConnection(where: {id: "` +idTem[1]+`"}) {
+        postsConnection(where: {id: "`+idTem[1]+`"}) {
           edges {
             node {
               id
@@ -451,11 +438,10 @@ async function getNew() {
                 name
               }
             }
+            cursor
           }
-          cursor
         }
       }
-    }
   `
   };
 
@@ -499,7 +485,8 @@ function init() {
   getEvent(1);
   getPost();
   getSlider();
-  getBannerSlider()
+  //getBannerSlider()
+  getBannersHome();
   getLogos()
 
 }
