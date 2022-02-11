@@ -29,7 +29,7 @@
 
 </head>
 
-<body onload="initEvent()">
+<body onload="initNew()">
   <nav class="nav">
     <div class="container">
       <a href="index.html">
@@ -91,29 +91,28 @@
   <div class="container pt-5">
     <div class="row mt-5" >
       <div class="col-sm-9  mt-5">
-        <div class="card shadow bg-body rounded" style="height: 60vh; background-size: cover;" id="eventBackground">
+        <div class="card shadow bg-body rounded">
+            <div class="card-body">
+                <img  class="card-img-top" id="eventBackground">
+                <h3 class="card-title mb-5 mt-5" id="titleEvent" ></h3>
+                <div id="text"></div>
+            </div>
         </div>
       </div>
       <div class="col-sm-3  mt-5">
-        <div class="row justify-content-around hidden-mobile "  style="height: 60vh;">
+        <div class="row justify-content-around hidden-mobile "  style="height: 30vh;">
             <div class="col-12">
-                <div class="card shadow bg-body rounded" style="height: 60vh; background-size: cover; background-position: center;" id="bannerBackground">
+                <div class="card shadow bg-body rounded" style="height: 30vh; background-size: cover;" >
+                    <div class="card-body" id="categorias">
+                        <h3 class="text-xl mb-8 font-semibold border-b pb-4">Categorias</h3>
+                      
+                    </div>
                 </div>
             </div>
         </div>
        
       </div>
     </div>
-    <div class="row mt-5 mb-5"  style="height: 40vh;">
-        <div class="col-sm-12 mt-5 mb-5">
-          <div class="card shadow bg-body rounded mb-5">
-              <div class="card-body p-5">
-                    <h3 class="card-title mb-5" id="titleEvent" ></h3>
-                    <p id="description" class="card-text" style="white-space:pre-line;"></p>
-              </div>
-          </div>
-        </div>
-      </div>
   </div>
 
  

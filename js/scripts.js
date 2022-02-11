@@ -1,16 +1,4 @@
-$('.slider-noticias').slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    fade: false,
-    arrows: true,
-    dots:false,
-    autoplay: false,
-    autoplaySpeed: 4000,
-    prevArrow: $('.prev'),
-    nextArrow: $('.next'),
-    pauseOnHover:false
-});
+
 
 
 $('.slider-info').slick({
@@ -182,17 +170,131 @@ function init() {
 function initEvent() {
   getEvent(2);
   getBannerEvent();
-  
 }
 
-async function getSlider() {
+// async function getSlider() {
+//   temp = false;
+//   const yourServerUrl = 'https://api-us-east-1.graphcms.com/v2/ckxrslv5g1dga01z93loq8v5e/master'
+//   const yourQuery = {
+//     query: `query MyQuery {
+//       sliders {
+//         imagen {
+//           url
+// var id;`
+
+async function getPost() {
   temp = false;
   const yourServerUrl = 'https://api-us-east-1.graphcms.com/v2/ckxrslv5g1dga01z93loq8v5e/master'
   const yourQuery = {
-    query: `query MyQuery {
-      sliders {
-        imagen {
-          url
+      query: `query Posts {
+        postsConnection {
+               edges {
+                 cursor
+                 node {
+                   author {
+                     bio
+                     name
+                     id
+                     photo {
+                       url
+                     }
+                   }
+                   createdAt
+                   slug
+                   title
+                   excerpt
+                   featuredImage {
+                     url
+                   }
+                   categories {
+                     name
+                     slug
+                   }
+                 }
+     }
+       }
+     }
+      `
+  };
+  id='hhhhh';
+  const xhr = new XMLHttpRequest();
+  xhr.responseType = 'json';
+  xhr.open('POST', yourServerUrl,true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.onloadend = function() {             
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status == 200) {
+      //console.log(xhr.response['data']['postsConnection']['edges']);
+      const post = xhr.response['data']['postsConnection']['edges'];
+      for(var i = 0; i < post.length; i++){
+        console.log(post[i]);
+        
+        document.querySelector('#newsSLider').insertAdjacentHTML(
+          'beforeend',
+          `<div class="slide">
+            <div class="left">
+              <img src="`+post[i]['node']['featuredImage']['url']+`">
+            </div>
+            <div class="right">
+              <p class="date">31.07.2020</p>
+                <h3>`+post[i]['node']['title']+`</h3>
+              <p>`+post[i]['node']['excerpt']+`</p>
+             
+                <a href='noticia.html?id=`+post[i]['cursor']+`' class="button">Ver más</a>
+            
+            </div>
+          </div>`      
+        );
+
+       
+      }
+
+      $('.slider-noticias').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: false,
+        arrows: true,
+        dots:false,
+        autoplay: false,
+        autoplaySpeed: 4000,
+        prevArrow: $('.prev'),
+        nextArrow: $('.next'),
+        pauseOnHover:false
+    });
+        //var element = document.getElementById('bannerBackground');
+        //element.style['background-image'] = 'url('+xhr.response['data']['banners'][0]['imageBanner']['url']+')';
+      
+    } 
+  };
+  xhr.send(JSON.stringify(yourQuery));
+}
+
+
+async function getNew() {
+  var idTem = parent.document.URL.substring(parent.document.URL.indexOf('?')).split('=');
+  console.log(idTem[1]);
+  temp = false;
+  const yourServerUrl = 'https://api-us-east-1.graphcms.com/v2/ckxrslv5g1dga01z93loq8v5e/master'
+  const yourQuery = {
+      query: `query MyQuery {
+        postsConnection(where: {id: "`+idTem[1]+`"}) {
+          edges {
+            node {
+              id
+              title
+              featuredImage {
+                url
+              }
+              content {
+                html
+              }
+              createdAt
+              categories {
+                name
+              }
+            }
+            cursor
+          }
         }
         texto
       }
@@ -200,20 +302,50 @@ async function getSlider() {
     
     `
   };
+
   const xhr = new XMLHttpRequest();
   xhr.responseType = 'json';
   xhr.open('POST', yourServerUrl,true);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.onloadend = function() {             
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status == 200) {
-      console.log(xhr.response);
-        document.getElementById('slidertitle').innerHTML = xhr.response['data']['sliders'][0]['texto'];
-        
-        var image = document.getElementById("sliderimg");
-        image.src = xhr.response['data']['sliders'][0]['imagen']['url'];
+      //console.log(xhr.response['data']['postsConnection']['edges']);
+      const post = xhr.response['data']['postsConnection']['edges'];
+      //for(var i = 0; i < post.length; i++){
+          console.log(post[0]);
+          var image = document.getElementById("eventBackground");
+          image.src = post[0]['node']['featuredImage']['url'];
+          document.getElementById('titleEvent').innerHTML = post[0]['node']['title'];
+          document.getElementById('text').innerHTML = post[0]['node']['content']['html'];
+          for(var i = 0; i < post[0]['node']['categories'].length; i++){
+            document.querySelector('#categorias').insertAdjacentHTML( 'beforeend',
+            `
+              <span class="cursor-pointer block border-b pb-3 mb-3">`+post[0]['node']['categories'][i]['name']+`</span><br>
+            `);
+          }
+      //}
+      
     } 
   };
   xhr.send(JSON.stringify(yourQuery));
+}
+
+
+// esta funcion se ejecuta en el body del index
+function init() {
+  getEvent(1);
+  getPost();
+}
+
+// esta funcion se ejecuta en el body de event
+function initEvent() {
+  getEvent(2);
+  getBannerEvent();
+}
+
+// esta funcion se ejecuta en el body de event
+function initNew() {
+  getNew();
 }
 
 
