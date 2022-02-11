@@ -305,6 +305,10 @@ lottie-player{
     align-items: center;
     @media screen and (max-width: $lg) {
       width: col(18);
+
+    }
+    @media screen and (max-width: $md) {
+      grid-template-columns: 1fr;
     }
     .card{
       background-color: $white;
@@ -318,7 +322,10 @@ lottie-player{
       align-items: center;
       position: relative;
       transition: all .5s ease;
-
+      @media screen and (max-width: $md) {
+        height: 300px;
+        margin: 50px 0;
+      }
       .svg{
         width: 100px;
         svg{
@@ -372,7 +379,7 @@ lottie-player{
         &.afiliados{
           height: 350px;
         }
-        &.socios{
+        &.socios1{
           height: 470px;
         }
         .svg{
@@ -528,6 +535,9 @@ lottie-player{
     padding: col(1);
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    @media screen and (max-width: $md) {
+      grid-template-columns: repeat(1,1fr);
+    }
     gap: 20px;
     h2{
       color: $green;
@@ -621,8 +631,14 @@ lottie-player{
       .slide{
         display: flex !important;
         align-items: center;
+        @media screen and (max-width: $md) {
+          flex-direction: column;
+        }
         .left{
           width: col(8);
+          @media screen and (max-width: $md) {
+            width: col(16);
+          }
           img{
             filter: blur(5px);
 
@@ -632,6 +648,9 @@ lottie-player{
         .right{
           width: col(10);
           margin: col(1 );
+          @media screen and (max-width: $md) {
+            width: col(16);
+          }
           h3{
             color: $green;
             margin-bottom: 25px;
@@ -744,9 +763,9 @@ lottie-player{
           margin: 0 5px;
         }
         @media screen and (max-width: $md) {
-          width: 100%;
-          height: 90px;
-          margin: 15px 0;
+          //width: 100% !important;
+          // height: 90px;
+          // margin: 15px 0;
         }
         img{
           object-fit: cover;
@@ -840,7 +859,167 @@ lottie-player{
       }
     }
 }
+.directivos22{
+  margin-top: 100px;
+  width: col(18);
+  position: relative;
+  height: 100vh;
+  @media screen and (max-width: $md) {
+    height: 150vh;
+ }
+    h1.title{
+      color: $green;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .button{
+      margin-bottom: 50px;
+    }
+    .container{
+      max-width: $max-width;
+      margin: auto;
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      .slid{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        position: absolute;
+        transition: all .5s ease;
+        @media screen and (max-width: $md) {
+          flex-direction: column;
+       }
+        &.s1{
+          opacity: 0;
+          pointer-events: none;
+          &.active{
+            opacity:1;
+            pointer-events: initial;
+          }
+        }
+        &.s2{
+          opacity: 0;
+          pointer-events: none;
+          &.active{
+            opacity: 1;
+            pointer-events: initial;
+          }
+        }
+      }
+      @media screen and (max-width: $md) {
+        flex-direction: column;
+      }
+      .item{
+        cursor: pointer;
+        margin: 0 10px;
+        border-radius: 50px;
+        width: 90px;
+        height: 450px;
+        overflow: hidden;
+        background-size: cover;
+        position: relative;
+        transition: all .8s ease;
+        @media screen and (max-width: $lg) {
+          margin: 0 5px;
+        }
+        @media screen and (max-width: $md) {
+           width: 100%;
+           height: 90px;
+           margin: 15px 0;
+        }
+        img{
+          object-fit: cover;
+          object-position: -10px;
+          width: 100%;
+          height: 120%;
+          filter: blur(3px);
+          transition: all .8s ease;
+        }
 
+        .texto{
+          position: absolute;
+          top: 30%;
+          right: 5.555%;
+          opacity: 0;
+          transition: opacity 1s ease;
+          p{
+            text-transform: uppercase;
+            @include p($white,2);
+          }
+          h1{
+            @include h1($white,.8);
+            &:first-of-type{
+              font-weight: 100;
+            }
+          }
+          h2{
+            padding: 5px;
+            color: $white;
+            background-color:$green;
+
+            &.long{
+              max-width: 300px;
+            }
+          }
+        }
+        &:after{
+          content: "";
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.6);
+          border-radius: 50px;
+          transition: all .8s ease;
+        }
+        h3{
+          text-align: center;
+          position: absolute;
+          right: 20px;
+          top: 20%;
+          writing-mode: vertical-rl;
+          transform: rotate(-180deg);
+          color: $white;
+          pointer-events: none;
+          transition: opacity .8s ease;
+          z-index: 9;
+          @media screen and (max-width: $md) {
+            writing-mode: initial;
+            transform: rotate(0deg);
+          }
+        }
+        &.active{
+          width: 100% !important;
+          //flex-grow: 8;
+          transition: all .8s ease;
+          border-radius: 10px;
+          background-size: cover;
+          @media screen and (max-width: $md) {
+            width: 100%;
+            height: 450px;
+          }
+          img{
+            height: 100%;
+            filter: blur(0);
+          }
+          .texto{
+            opacity: 1;
+          }
+          h3{
+            opacity: 0;
+          }
+          &:after{
+            border-radius: 10px;
+            transition: all .8s ease;
+            opacity: 0;
+          }
+        }
+      }
+    }
+}
   //fix para el delay de animacion entre el primer slider y el ultimo slider
 
   /* slide when not active/center*/
@@ -1094,6 +1273,9 @@ footer{
   background-image: url(../img/noticias1.jpg);
   background-size: cover;
   padding: col(1);
+  @media screen and (max-width: $md) {
+    flex-direction: column;
+  }
   .date{
     color: $green;
   }
@@ -1110,22 +1292,13 @@ footer{
     border: $green 1px solid;
   }
   .card-slider{
-    width: col(18);
-    height: 100%;
+    width: col(9);
     position: relative;
-
     .container{
-      display: flex;
-      position: absolute;
-      width: 100%;
-      height: 100%;
+
     }
     .card{
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      z-index: 1;
-      background-size: cover;
+      padding: 0 15px;
       width: 250px;
       height: 350px;
       transition: all .5s ease;
@@ -1135,33 +1308,9 @@ footer{
         height: 100%;
         object-fit: cover;
       }
-      &.active{
-        z-index: 0;
-        transform: scale(10);
-      }
-    }
-  }
-
-
-  .card-slider2{
-    width: col(16);
-    position: absolute;
-    top: 20%;
-    display: flex;
-    justify-content: space-between;
-    .card{
-      z-index: 1;
-      background-size: cover;
-      width: 250px;
-      height: 350px;
-      background-image: url(../img/noticias1.jpg);
-      background-size: cover;
-      transition: all .5s ease;
-      &.active{
-        //transform: scale(10);
-        width: 100vw;
-        height: 100vh;
-        z-index: 0;
+      h3{
+        color: $white;
+        margin-top: 25px;
       }
     }
   }

@@ -10,7 +10,24 @@ $(".slider-directivos").slick({
   speed: 1000,
   slidesToShow: 5,
   slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 850,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    }
+  ],
 });
+
 
 
 
@@ -265,7 +282,22 @@ async function getLogos() {
         speed: 1000,
         slidesToShow: 3,
         slidesToScroll: 1,
-
+        responsive: [
+          {
+            breakpoint: 1200,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 850,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          }
+        ],
       });
     }
   };
@@ -383,7 +415,7 @@ async function getBannersHome() {
       console.log(xhr.response);
       const post = xhr.response["data"]["bannerHomes"];
       for (var i = 0; i < post.length; i++) {
-        
+
         document.querySelector("#bannerHome").insertAdjacentHTML(
           "beforeend",
           `<div class="slide" >
@@ -506,6 +538,11 @@ $(document).ready(function () {
   $(".item").click(function () {
     $(".item").removeClass("active");
     $(this).addClass("active");
+  });
+
+  $("#boton").click(function () {
+    $(".s1").toggleClass("active");
+    $(".s2").toggleClass("active");
   });
 
   $(".burguer").click(function () {

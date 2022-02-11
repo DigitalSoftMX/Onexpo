@@ -59,24 +59,16 @@
   </nav>
 
   <div class="responsive-nav">
-    <a href="index.html">
-      <p>Home</p>
+    <a href="index.html"><p>Home</p></a>
+    <a href="afiliados.html"><p>Afiliados</p></a>
+    <a href="onexpored.html">
+      <p>Onexpored</p>
     </a>
-    <a href="afiliados.html">
-      <p>Afiliados</p>
-    </a>
-    <a href="socios.html">
-      <p>Socios</p>
-    </a>
-    <a href="noticias.html">
-      <p>Noticias</p>
-    </a>
-    <a href="#">
+    <a href="noticias.html"><p>Noticias</p></a>
+    <a href="ext/pdf.pdf" target="_blank">
       <p>Revista</p>
     </a>
-    <a href="contacto.html">
-      <p>Contacto</p>
-    </a>
+    <a href="contacto.html"><p>Contacto</p></a>
   </div>
 
   <section class="news-home">
@@ -90,16 +82,14 @@
 
     <div class="card-slider">
 
-      <div class="container">
 
-        <div class="card" data-slide="one">
-          <img src="img/noticias1.jpg">
-          <p>
-            17.11.21
-          </p>
-        </div>
-      </div>
+      <!-- <div class="card" data-slide="one">
+        <img src="img/noticias1.jpg">
+        <p>texto</p>
+      </div> -->
     </div>
+
+
 
   </section>
 
@@ -240,10 +230,83 @@
       xhr.send(JSON.stringify(yourQuery));
     }
 
+    async function getNewsSlider() {
+      temp = false;
+      const yourServerUrl =
+        "https://api-us-east-1.graphcms.com/v2/ckxrslv5g1dga01z93loq8v5e/master";
+      const yourQuery = {
+        query: `query MyQuery {
+                posts {
+                  id
+                  featuredImage {
+                    url
+                  }
+                  title
+                }
+              }
+      `,
+      };
+
+      const xhr = new XMLHttpRequest();
+      xhr.responseType = "json";
+      xhr.open("POST", yourServerUrl, true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.onloadend = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status == 200) {
+          const post = xhr.response["data"]["posts"];
+          for (var i = 0; i < post.length; i++) {
+            document.querySelector(".card-slider").insertAdjacentHTML(
+              "beforeend",
+              `
+            <div class="card">
+              <a href='noticia.html?id=` +
+              post[i]["id"] +
+              `' >
+            <img src="` +
+              post[i]["featuredImage"]["url"] +
+              `">
+              <h3>` +
+              post[i]["title"] +
+              `</h3>
+          </a>
+            </div>
+          `
+            );
+          }
+          $(".card-slider").slick({
+            pauseOnHover: false,
+            dots: false,
+            arrows: false,
+            autoplay: true,
+            speed: 1000,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            responsive: [
+              {
+                breakpoint: 1200,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 1,
+                },
+              },
+              {
+                breakpoint: 850,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                },
+              }
+            ],
+          });
+        }
+      };
+      xhr.send(JSON.stringify(yourQuery));
+    }
+
 
 
     getAllNews()
-    
+    getNewsSlider()
 
 
   </script>
