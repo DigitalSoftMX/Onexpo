@@ -222,14 +222,6 @@ body {
   }
 }
 
-#holder {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
 
 .responsive-nav{
   display: none;
@@ -415,9 +407,12 @@ lottie-player{
   position: absolute;
   overflow: hidden;
   right: 0;
-  width: 700px;
+  width: 100%;
   height: 700px;
   z-index: -1;
+  top: 50%;  /* position the top  edge of the element at the middle of the parent */
+  left: 50%; /* position the left edge of the element at the middle of the parent */
+  transform: translate(-50%, -50%);
 }
 
 .expo{
@@ -515,6 +510,12 @@ lottie-player{
     border-radius: 50%;
     display: block;
   }
+}
+
+.banner{
+  background-color: $blue;
+  width: col(18);
+  padding: col(1) 0 col(1) col(1);
 }
 
 .noticias{
