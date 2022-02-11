@@ -222,6 +222,15 @@ body {
   }
 }
 
+#holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 .responsive-nav{
   display: none;
   position: fixed;
@@ -234,13 +243,14 @@ body {
   height: 70%;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 99999;
   @media screen and (max-width: $md) {
     display: flex;
    }
    &.active{
     right: 0;
     
-    z-index: 9999;
+   
    }
    p{
      color: $white;
@@ -272,7 +282,9 @@ lottie-player{
   @media screen and (max-width: $lg) {
     //margin: col(1);
   }
-
+  @media screen and (max-width: $lg) {
+    padding: col(1);
+  }
   .container{
     width: col(18);
     display: flex;
@@ -603,6 +615,7 @@ lottie-player{
   width: col(18);
   height: 100vh;
   position: relative;
+
   @media screen and (max-width: $md) {
     width: col(16);
     margin: auto;
@@ -617,32 +630,15 @@ lottie-player{
       margin: auto;
       display: flex;
       position: relative;
-      .prev{
-        position: absolute;
-        top:0;
-        left: 0;
-        width: 50px;
-        height: 50px;
-        background-color: red;
-        z-index: 9999;
-      }
-      .next{
-        position: absolute;
-        top:0;
-        right: 0;
-        width: 50px;
-        height: 50px;
-        background-color: red;
-        z-index: 9999;
-      }
+
       .slid{
         display: flex;
         justify-content: space-between;
         position: absolute;
-        width: 200vw;
+        width: 100%;
         transition: all .5s ease;
         &.next{
-          right: 0%;
+          right: 50%;
         }
         &.prev{
           left: 0%;
@@ -655,7 +651,7 @@ lottie-player{
         cursor: pointer;
         margin: 0 10px;
         border-radius: 50px;
-        width: 90px ;
+        width: 90px !important;
         height: 450px;
         overflow: hidden;
         background-size: cover;
@@ -734,7 +730,7 @@ lottie-player{
           }
         }
         &.active{
-          width: 30%;
+          width: 30% !important;
           //flex-grow: 8;
           transition: all .8s ease;
           border-radius: 10px;
@@ -1227,7 +1223,9 @@ body{
 .beneficios{
   width: col(18);
   height: 100vh;
-  
+  @media screen and (max-width: $md) {
+    overflow: hidden;
+  }
   h1{
     color: $blue;
     text-align: center;
@@ -1240,6 +1238,7 @@ body{
     height: 140px;
     position: relative;
     perspective: 1000px;
+
     #carousel{
       width: 100%;
       height: 100%;
@@ -1247,6 +1246,7 @@ body{
       transform-style: preserve-3d;
       animation: rotation 15s infinite linear;
       transition: all .5s ease;
+
       &.active{
         transform: rotateY(72deg);
       }
@@ -1261,16 +1261,28 @@ body{
         overflow: hidden;
         box-shadow: $boxShadow;
         padding: 25px;
+        @media screen and (max-width: $md) {
+          width: 200px;
+          height: 200px;
+          padding: 5px;
+        }
         
         svg{
           width: 125px;
+          height: 100px;
           display: block;
           margin:auto;
+          @media screen and (max-width: $md) {
+            width: 60px;
+          }
         }
         h3{
           margin-top: 25px;
           text-align: center;
           color: $green;
+          @media screen and (max-width: $md) {
+            @include h3($green,.7)
+          }
         }
       }
     }

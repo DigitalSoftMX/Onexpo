@@ -12,7 +12,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
   <link rel="manifest" href="site.webmanifest">
 
   <link rel="stylesheet" href="css/app.css">
@@ -76,9 +75,10 @@
   </section>
 
   <section class="unete">
-    <div class="animationSVG">
+    <div id="holder" class="animationSVG"></div>
+    <!--div class="animationSVG">
       <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_g63n5jcl.json"  background="transparent"  speed="1"  loop autoplay></lottie-player>
-    </div>
+    </div-->
 
 
     <div class="container">
@@ -232,6 +232,12 @@
     </div>
   </section>
 
+  <section class="cms">
+    <h1 id="slidertitle"></h1>
+    <img id="sliderimg" src=""  style="height: 55vh;" class="rounded mx-auto d-block">
+    <div  ></div>    
+  </section>
+
   <section class="data">
 
     <div class="container">
@@ -317,18 +323,10 @@
   </section>
 
   <section class="directivos">
-    <div class="prev">
-
-    </div>
-    <div class="next">
-
-    </div>
+    
     <h1 class="title text">Directivos</h1>
     <div class="container">
-
-
-
-      <div class="slid">
+      <div class="slid slider-directivos">
         <div class=" item active">
           <img src="img/directivo.png">
           <h3>Presidente</h3>
@@ -502,7 +500,7 @@
   </section>
 
   <script type="text/javascript" src="js/slick.js"></script>
-
+  <script src="js/canvas.js"></script>
   <script src="js/scripts.js"></script>
 </body>
 

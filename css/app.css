@@ -235,6 +235,15 @@ body {
   background-color: #ffffff;
 }
 
+#holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 .responsive-nav {
   display: none;
   position: fixed;
@@ -253,6 +262,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  z-index: 99999;
 }
 
 @media screen and (max-width: 850px) {
@@ -265,7 +275,6 @@ body {
 
 .responsive-nav.active {
   right: 0;
-  z-index: 9999;
 }
 
 .responsive-nav p {
@@ -298,6 +307,12 @@ lottie-player {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+}
+
+@media screen and (max-width: 1200px) {
+  .unete {
+    padding: 5.55556%;
+  }
 }
 
 .unete .container {
@@ -797,26 +812,6 @@ lottie-player {
   position: relative;
 }
 
-.directivos .container .prev {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50px;
-  height: 50px;
-  background-color: red;
-  z-index: 9999;
-}
-
-.directivos .container .next {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50px;
-  height: 50px;
-  background-color: red;
-  z-index: 9999;
-}
-
 .directivos .container .slid {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -825,13 +820,13 @@ lottie-player {
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: absolute;
-  width: 200vw;
+  width: 100%;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
 }
 
 .directivos .container .slid.next {
-  right: 0%;
+  right: 50%;
 }
 
 .directivos .container .slid.prev {
@@ -851,7 +846,7 @@ lottie-player {
   cursor: pointer;
   margin: 0 10px;
   border-radius: 50px;
-  width: 90px;
+  width: 90px !important;
   height: 450px;
   overflow: hidden;
   background-size: cover;
@@ -980,7 +975,7 @@ lottie-player {
 }
 
 .directivos .container .item.active {
-  width: 30%;
+  width: 30% !important;
   -webkit-transition: all .8s ease;
   transition: all .8s ease;
   border-radius: 10px;
@@ -1750,6 +1745,12 @@ body {
   height: 100vh;
 }
 
+@media screen and (max-width: 850px) {
+  .beneficios {
+    overflow: hidden;
+  }
+}
+
 .beneficios h1 {
   color: #19375E;
   text-align: center;
@@ -1797,16 +1798,53 @@ body {
   padding: 25px;
 }
 
+@media screen and (max-width: 850px) {
+  .beneficios .containerss #carousel figure {
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+  }
+}
+
 .beneficios .containerss #carousel figure svg {
   width: 125px;
+  height: 100px;
   display: block;
   margin: auto;
+}
+
+@media screen and (max-width: 850px) {
+  .beneficios .containerss #carousel figure svg {
+    width: 60px;
+  }
 }
 
 .beneficios .containerss #carousel figure h3 {
   margin-top: 25px;
   text-align: center;
   color: #37B086;
+}
+
+@media screen and (max-width: 850px) {
+  .beneficios .containerss #carousel figure h3 {
+    font-family: 'NunitoBlack', sans-serif;
+    font-size: 0.7875rem;
+    color: #37B086;
+    margin: 0;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: 850px) and (max-width: 850px) {
+  .beneficios .containerss #carousel figure h3 {
+    font-size: 1.05rem;
+  }
+}
+
+@media screen and (max-width: 850px) and (max-width: 580px) {
+  .beneficios .containerss #carousel figure h3 {
+    font-size: 1.05rem;
+  }
 }
 
 #carousel figure:nth-child(1) {

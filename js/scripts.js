@@ -15,11 +15,21 @@ $('.slider-info').slick({
   variableWidth: true
 });
 
-$('.prev').click(function () {
+$('.slider-directivos').slick({
+  pauseOnHover:false,
+  dots: false,
+  arrows:true,
+  autoplay: false,
+  speed: 1000,
+  slidesToShow: 5,
+  slidesToScroll: 1
+});
+
+$('.prevv').click(function () {
   $('.slid').toggleClass('prev');
 });
 
-$('.next').click(function () {
+$('.nextt').click(function () {
   $('.slid').toggleClass('next');
 });
 
@@ -95,7 +105,7 @@ counterz.forEach( counter => {
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.onloadend = function() {             
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status == 200) {
-      console.log(xhr.response);
+      //console.log(xhr.response);
       if(option == 1){
 
         document.getElementById('titleEvent').innerHTML = xhr.response['data']['event'][0]['titleEvent'];
@@ -141,7 +151,7 @@ async function getBannerEvent() {
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.onloadend = function() {             
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status == 200) {
-      console.log(xhr.response);
+      //console.log(xhr.response);
         var element = document.getElementById('bannerBackground');
         element.style['background-image'] = 'url('+xhr.response['data']['banners'][0]['imageBanner']['url']+')';
       
@@ -267,7 +277,7 @@ async function getNew() {
           }
         }
       }
-      `
+    `
   };
 
   const xhr = new XMLHttpRequest();
