@@ -608,7 +608,7 @@ lottie-player {
   background-color: $blue;
   width: 100%;
   @media screen and (max-width: $md) {
-    display: none;
+    display: none !important;
   }
 }
 
