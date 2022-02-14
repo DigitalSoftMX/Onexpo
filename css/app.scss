@@ -607,6 +607,9 @@ lottie-player {
 .banner {
   background-color: $blue;
   width: 100%;
+  @media screen and (max-width: $md) {
+    display: none;
+  }
 }
 
 .noticias {

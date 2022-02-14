@@ -773,6 +773,12 @@ lottie-player {
   width: 100%;
 }
 
+@media screen and (max-width: 850px) {
+  .banner {
+    display: none;
+  }
+}
+
 .noticias {
   background-color: #19375e;
   width: 100%;
