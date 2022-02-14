@@ -540,9 +540,9 @@ $(document).ready(function () {
     $(this).addClass("active");
   });
 
-  $("#boton").click(function () {
-    $(".s1").toggleClass("active");
-    $(".s2").toggleClass("active");
+  $(".boton").click(function () {
+    $(".slid").toggleClass("active");
+   
   });
 
   $(".burguer").click(function () {
