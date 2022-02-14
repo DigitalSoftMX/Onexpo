@@ -174,6 +174,37 @@ body {
   background-color: rgba(0, 0, 0, 0.527);
   mix-blend-mode: difference;
   padding: 15px;
+  transition: all .5s ease;
+  &:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background-color: $green;
+    transition: width .5s ease;
+   
+    opacity: 0;
+  }
+  &.activo{
+    background-color: $white;
+    mix-blend-mode: initial;
+    &:after{
+      opacity: 1;
+    }
+    .container{
+      .logoColor{
+        display: block;
+      }
+      .logo{
+        display: none;
+      }
+      p{
+        color: $gray;
+      }
+    }
+  }
   .container {
     max-width: $max-width;
     margin: auto;
@@ -183,8 +214,11 @@ body {
     @media screen and (max-width: $lap) {
       max-width: $min-width;
     }
-    .logo {
+    .logo,.logoColor {
       width: 200px;
+    }
+    .logoColor{
+      display: none
     }
   }
   p {
@@ -257,9 +291,6 @@ lottie-player {
   display: flex;
   align-items: center;
   position: relative;
-  @media screen and (max-width: $lg) {
-    //margin: col(1);
-  }
   @media screen and (max-width: $lg) {
     padding: col(1);
   }

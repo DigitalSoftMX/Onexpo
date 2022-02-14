@@ -31,16 +31,22 @@ $(".slider-directivos").slick({
   ],
 });
 
+var lastScrollTop = 0;
+$(window).scroll(function (e) {
+  $altoportada = $('.ancla').height();
+  var st = $(this).scrollTop();
+  if (st > $altoportada) {
+    $('nav').addClass('activo')
+  } else {
+    $('nav').removeClass('activo')
+  }
+  if ($(".responsive-menu").hasClass("activo")) {
+    $('nav').addClass('scrolldown')
+  }
+  lastScrollTop = st;
 
-
-
-$(".prevv").click(function () {
-  $(".slid").toggleClass("prev");
 });
 
-$(".nextt").click(function () {
-  $(".slid").toggleClass("next");
-});
 
 $(".burguer").click(function () {
   $(".menu").toggleClass("active");
