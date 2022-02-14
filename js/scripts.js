@@ -1,6 +1,9 @@
 
 
-
+let nameDir = ["Rafael", "Carlos","José Manuel","David Jonathan","Juan Carlos","Daniela","Willhelm","Eucario","Alonso","Luis Fernando"];
+let lastName = ["Zorrilla", "León","Sánchez","García","Celorio","Marinelli","Schmidt","León","Montaño","Álvarez"];
+let cargo = ["Presidente", "Vicepresidente","Secretario","Tesorero","Consejo de vigilancia","FUNDADOR HONORARIO (SOCIO)","Gerente","SOCIO FUNDADOR HONORARIO","Vocal","Vocal"];
+let img = ["img/man.png", "img/man.png","img/man.png","img/man.png","img/man.png","img/woman.png","img/man.png","img/man.png","img/man.png","img/man.png"];
 
 $(".slider-directivos").slick({
   pauseOnHover: false,
@@ -510,6 +513,99 @@ async function getNew() {
   xhr.send(JSON.stringify(yourQuery));
 }
 
+// varible para el slide de directivos
+var coutTemp = 0;
+var coutTempTwo = 0;
+//
+function initDirective(){
+  for(var x = 0; x<5; x++){
+    document.querySelector("#dire").insertAdjacentHTML(
+      "beforeend",
+      `<div class=" item `+ ( x<1 ? `active` : ``) +`">
+        <img src="`+img[x]+`">
+        <h3>`+cargo[x]+`</h3>
+        <div class="texto">
+          <p>`+nameDir[x]+`</p>
+          <h1>`+lastName[x]+`</h1>
+          <h2>`+cargo[x]+`</h2>
+        </div>
+      </div>`
+    );
+  }
+
+  $(".item").click(function () {
+    $(".item").removeClass("active");
+    $(this).addClass("active");
+  });
+  coutTempTwo = x;
+}
+
+var select = document.getElementById('dire');
+var element = document.getElementById("leftid"); 
+element.onclick = function() {
+  //$('#dire').find('div').first().remove();
+  console.log('value', coutTemp)
+  if(coutTemp > 0){
+    coutTemp--;
+    coutTempTwo--;
+    $(".item").removeClass("active"); 
+    
+    document.querySelector("#dire").insertAdjacentHTML(
+      "afterbegin",
+      `<div class=" item">
+        <img src="`+img[coutTemp]+`">
+        <h3>`+cargo[coutTemp]+`</h3>
+        <div class="texto">
+          <p>`+nameDir[coutTemp]+`</p>
+          <h1>`+lastName[coutTemp]+`</h1>
+          <h2>`+cargo[coutTemp]+`</h2>
+        </div>
+      </div>`
+    );
+    $('#dire').find('div').first().addClass('active');
+    select.removeChild(select.lastElementChild);
+    
+    $(".item").click(function () {
+      $(".item").removeClass("active");
+      $(this).toggleClass("active");
+    });
+  }
+}
+
+var element = document.getElementById("rigthid"); 
+element.onclick = function() {
+  //$('#dire').find('div').first().remove();
+  console.log('value', coutTemp)
+  if(coutTempTwo < 10){
+    coutTemp++;
+    coutTempTwo++;
+    $(".item").removeClass("active");
+    select.removeChild(select.firstElementChild);
+    $(".item").removeClass("active"); 
+   
+    document.querySelector("#dire").insertAdjacentHTML(
+      "beforeend",
+      `<div class=" item active">
+        <img src="`+img[(coutTempTwo-1)]+`">
+        <h3>`+cargo[(coutTempTwo-1)]+`</h3>
+        <div class="texto">
+          <p>`+nameDir[(coutTempTwo-1)]+`</p>
+          <h1>`+lastName[(coutTempTwo-1)]+`</h1>
+          <h2>`+cargo[(coutTempTwo-1)]+`</h2>
+        </div>
+      </div>`
+    );
+   
+    
+    $(".item").click(function () {
+      $(".item").removeClass("active");
+      $(this).toggleClass("active");
+    });
+  }
+  
+}
+
+
 
 
 // esta funcion se ejecuta en el body del index
@@ -520,7 +616,7 @@ function init() {
   //getBannerSlider()
   getBannersHome();
   getLogos()
-
+  initDirective();
 }
 
 // esta funcion se ejecuta en el body de event
@@ -535,13 +631,10 @@ function initNew() {
 }
 
 $(document).ready(function () {
-  $(".item").click(function () {
-    $(".item").removeClass("active");
-    $(this).addClass("active");
-  });
+ 
 
   $(".boton").click(function () {
-    $(".slid").toggleClass("active");
+    //$(".slid").toggleClass("active");
    
   });
 
