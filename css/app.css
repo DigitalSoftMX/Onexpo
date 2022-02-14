@@ -1,20 +1,20 @@
 @font-face {
-  font-family: 'NunitoBlack';
+  font-family: "NunitoBlack";
   src: url(../fonts/NunitoSans-Black.ttf);
 }
 
 @font-face {
-  font-family: 'Nunitoregular';
+  font-family: "Nunitoregular";
   src: url(../fonts/NunitoSans-Regular.ttf);
 }
 
 @font-face {
-  font-family: 'NunitoBold';
+  font-family: "NunitoBold";
   src: url(../fonts/NunitoSans-Bold.ttf);
 }
 
 h1 {
-  font-family: 'NunitoBlack';
+  font-family: "NunitoBlack";
   font-size: 3.75rem;
   color: initial;
   margin: 0;
@@ -35,9 +35,9 @@ h1 {
 }
 
 h2 {
-  font-family: 'NunitoBlack', sans-serif;
+  font-family: "NunitoBlack", sans-serif;
   font-size: 1.625rem;
-  color: #19375E;
+  color: #19375e;
   margin: 0;
   text-transform: uppercase;
 }
@@ -55,27 +55,27 @@ h2 {
 }
 
 h3 {
-  font-family: 'NunitoBlack', sans-serif;
+  font-family: "NunitoBlack", sans-serif;
   font-size: 1.125rem;
-  color: #19375E;
+  color: #19375e;
   margin: 0;
   text-transform: uppercase;
 }
 
 @media screen and (max-width: 850px) {
   h3 {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 
 @media screen and (max-width: 580px) {
   h3 {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 
 p {
-  font-family: 'NunitoRegular';
+  font-family: "NunitoRegular";
   font-size: 1.125rem;
   color: initial;
   margin: 0;
@@ -83,12 +83,12 @@ p {
 }
 
 p.especial {
-  font-family: 'NunitoBold';
+  font-family: "NunitoBold";
 }
 
 @media screen and (max-width: 1200px) {
   p.especial {
-    font-family: 'NunitoRegular';
+    font-family: "NunitoRegular";
     font-size: 1.0125rem;
     color: initial;
     margin: 0;
@@ -98,8 +98,8 @@ p.especial {
 
 .button {
   z-index: 100;
-  background: #19375E;
-  font-family: 'NunitoBold';
+  background: #19375e;
+  font-family: "NunitoBold";
   font-size: 16px;
   color: #ffffff;
   width: 160px;
@@ -163,7 +163,7 @@ body {
   mix-blend-mode: difference;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1400px) {
   .nav {
     padding: 15px;
   }
@@ -194,7 +194,7 @@ body {
 }
 
 .nav p {
-  font-family: 'NunitoRegular';
+  font-family: "NunitoRegular";
   font-size: 0.9rem;
   color: #ffffff;
   margin: 0;
@@ -240,10 +240,10 @@ body {
   display: none;
   position: fixed;
   right: -100%;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   top: 144px;
-  background: #19375E;
+  background: #19375e;
   text-align: center;
   width: 100%;
   height: 80vh;
@@ -340,7 +340,7 @@ lottie-player {
 }
 
 .unete .left p {
-  color: #19375E;
+  color: #19375e;
   max-width: 350px;
 }
 
@@ -388,8 +388,8 @@ lottie-player {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 @media screen and (max-width: 850px) {
@@ -404,12 +404,12 @@ lottie-player {
 }
 
 .unete .right .card .svg svg {
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .unete .right .card .svg svg .cls-1 {
-  fill: #19375E;
+  fill: #19375e;
 }
 
 .unete .right .card h3 {
@@ -421,8 +421,8 @@ lottie-player {
 
 .unete .right .card .text {
   text-align: center;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   display: none;
 }
 
@@ -440,7 +440,7 @@ lottie-player {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #37B086;
+  background-color: #37b086;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -450,8 +450,8 @@ lottie-player {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   -webkit-transform-origin: center center;
           transform-origin: center center;
   -webkit-transform: scale(0);
@@ -463,12 +463,12 @@ lottie-player {
 }
 
 .unete .right .card:hover {
-  background-color: #19375E;
+  background-color: #19375e;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .unete .right .card:hover.afiliados {
@@ -484,8 +484,8 @@ lottie-player {
 }
 
 .unete .right .card:hover .svg svg {
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .unete .right .card:hover .svg svg .cls-1 {
@@ -493,7 +493,7 @@ lottie-player {
 }
 
 .unete .right .card:hover h3 {
-  color: #37B086;
+  color: #37b086;
 }
 
 .unete .right .card:hover .text {
@@ -503,12 +503,12 @@ lottie-player {
 .unete .right .card:hover .chevron {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-transition-delay: .2s;
-          transition-delay: .2s;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
 }
 
 .unete h1 {
-  color: #37B086;
+  color: #37b086;
 }
 
 .animationSVG {
@@ -583,8 +583,8 @@ lottie-player {
   height: 0;
   border-radius: 50%;
   border: #ffffff;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .slider-banner .slick-dots li button {
@@ -685,13 +685,13 @@ lottie-player {
 }
 
 .data .container h2 {
-  color: #37B086;
+  color: #37b086;
   text-align: center;
   margin-top: 25px;
 }
 
 .data .container p {
-  color: #19375E;
+  color: #19375e;
   text-align: center;
 }
 
@@ -716,8 +716,8 @@ lottie-player {
 }
 
 .graph-container circle {
-  fill: #19375E;
-  stroke: #37B086;
+  fill: #19375e;
+  stroke: #37b086;
   stroke-width: 50;
   stroke-dasharray: 0 158;
   -webkit-transition: stroke-dasharray 3s ease;
@@ -728,18 +728,18 @@ lottie-player {
   margin: 0 auto;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
-  background: #19375E;
+  background: #19375e;
   border-radius: 50%;
   display: block;
 }
 
 .banner {
-  background-color: #19375E;
+  background-color: #19375e;
   width: 100%;
 }
 
 .noticias {
-  background-color: #19375E;
+  background-color: #19375e;
   width: 100%;
   padding: 5.55556% 0 5.55556% 5.55556%;
 }
@@ -828,13 +828,13 @@ lottie-player {
 }
 
 .noticias .container .slider-noticias .slide .right h3 {
-  color: #37B086;
+  color: #37b086;
   margin-bottom: 25px;
 }
 
 .noticias .container .slider-noticias .slide .right .date {
   margin-bottom: 0;
-  font-family: 'NunitoRegular';
+  font-family: "NunitoRegular";
   font-size: 0.675rem;
   color: #ffffff;
   margin: 0;
@@ -842,7 +842,7 @@ lottie-player {
 }
 
 .noticias .container .slider-noticias .slide .right p {
-  font-family: 'NunitoRegular';
+  font-family: "NunitoRegular";
   font-size: 0.9rem;
   color: #ffffff;
   margin: 0;
@@ -852,8 +852,8 @@ lottie-player {
 
 .noticias .container .slider-noticias .slide .right .button {
   z-index: 100;
-  background: #37B086;
-  font-family: 'NunitoBold';
+  background: #37b086;
+  font-family: "NunitoBold";
   font-size: 16px;
   color: #ffffff;
   width: 160px;
@@ -899,7 +899,7 @@ lottie-player {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #37B086;
+  background-color: #37b086;
   opacity: 0.6;
   z-index: 0;
 }
@@ -919,7 +919,7 @@ lottie-player {
 }
 
 .directivos h1.title {
-  color: #37B086;
+  color: #37b086;
   text-align: center;
   margin-bottom: 50px;
 }
@@ -962,8 +962,8 @@ lottie-player {
           justify-content: space-between;
   position: absolute;
   width: 100%;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .directivos .container .slid.next {
@@ -992,8 +992,8 @@ lottie-player {
   overflow: hidden;
   background-size: cover;
   position: relative;
-  -webkit-transition: all .8s ease;
-  transition: all .8s ease;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1011,8 +1011,8 @@ lottie-player {
   height: 120%;
   -webkit-filter: blur(3px);
           filter: blur(3px);
-  -webkit-transition: all .8s ease;
-  transition: all .8s ease;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
 }
 
 .directivos .container .item .texto {
@@ -1026,7 +1026,7 @@ lottie-player {
 
 .directivos .container .item .texto p {
   text-transform: uppercase;
-  font-family: 'NunitoRegular';
+  font-family: "NunitoRegular";
   font-size: 2.25rem;
   color: #ffffff;
   margin: 0;
@@ -1034,7 +1034,7 @@ lottie-player {
 }
 
 .directivos .container .item .texto h1 {
-  font-family: 'NunitoBlack';
+  font-family: "NunitoBlack";
   font-size: 3rem;
   color: #ffffff;
   margin: 0;
@@ -1061,7 +1061,7 @@ lottie-player {
 .directivos .container .item .texto h2 {
   padding: 5px;
   color: #ffffff;
-  background-color: #37B086;
+  background-color: #37b086;
 }
 
 .directivos .container .item .texto h2.long {
@@ -1078,8 +1078,8 @@ lottie-player {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 50px;
-  -webkit-transition: all .8s ease;
-  transition: all .8s ease;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
 }
 
 .directivos .container .item h3 {
@@ -1094,8 +1094,8 @@ lottie-player {
           transform: rotate(-180deg);
   color: #ffffff;
   pointer-events: none;
-  -webkit-transition: opacity .8s ease;
-  transition: opacity .8s ease;
+  -webkit-transition: opacity 0.8s ease;
+  transition: opacity 0.8s ease;
   z-index: 9;
 }
 
@@ -1111,8 +1111,8 @@ lottie-player {
 
 .directivos .container .item.active {
   width: 100% !important;
-  -webkit-transition: all .8s ease;
-  transition: all .8s ease;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
   border-radius: 10px;
   background-size: cover;
 }
@@ -1140,37 +1140,40 @@ lottie-player {
 
 .directivos .container .item.active:after {
   border-radius: 10px;
-  -webkit-transition: all .8s ease;
-  transition: all .8s ease;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
   opacity: 0;
 }
 
 .directivos22 {
   margin-top: 100px;
+  margin-bottom: 50px;
   width: 100%;
   position: relative;
-  height: 100vh;
+}
+
+@media screen and (max-width: 1400px) {
+  .directivos22 {
+    width: 88.88889%;
+    margin: 5.55556%;
+  }
 }
 
 @media screen and (max-width: 850px) {
   .directivos22 {
-    height: 150vh;
+    width: 100%;
+    margin: 0%;
   }
 }
 
 .directivos22 h1.title {
-  color: #37B086;
+  color: #37b086;
   text-align: center;
   margin-bottom: 50px;
 }
 
-.directivos22 .button {
-  margin-bottom: 50px;
-}
-
 .directivos22 .container {
-  max-width: 1600px;
-  margin: auto;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1179,6 +1182,24 @@ lottie-player {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.directivos22 .container .boton {
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  cursor: pointer;
+}
+
+.directivos22 .container .boton.left {
+  left: 0;
+}
+
+.directivos22 .container .boton.right {
+  right: 0;
 }
 
 .directivos22 .container .slid {
@@ -1188,10 +1209,27 @@ lottie-player {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 100%;
+  width: 88.88889%;
+  margin: auto;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  opacity: 0;
+  pointer-events: none;
   position: absolute;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 850px) {
+  .directivos22 .container .slid {
+    width: 83.33333%;
+  }
+}
+
+.directivos22 .container .slid.active {
+  opacity: 1;
+  pointer-events: initial;
+  position: initial;
 }
 
 @media screen and (max-width: 850px) {
@@ -1201,26 +1239,6 @@ lottie-player {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-}
-
-.directivos22 .container .slid.s1 {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.directivos22 .container .slid.s1.active {
-  opacity: 1;
-  pointer-events: initial;
-}
-
-.directivos22 .container .slid.s2 {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.directivos22 .container .slid.s2.active {
-  opacity: 1;
-  pointer-events: initial;
 }
 
 @media screen and (max-width: 850px) {
@@ -1241,8 +1259,8 @@ lottie-player {
   overflow: hidden;
   background-size: cover;
   position: relative;
-  -webkit-transition: all .8s ease;
-  transition: all .8s ease;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1254,7 +1272,7 @@ lottie-player {
 @media screen and (max-width: 850px) {
   .directivos22 .container .item {
     width: 100%;
-    height: 90px;
+    height: 60px;
     margin: 15px 0;
   }
 }
@@ -1268,8 +1286,8 @@ lottie-player {
   height: 120%;
   -webkit-filter: blur(3px);
           filter: blur(3px);
-  -webkit-transition: all .8s ease;
-  transition: all .8s ease;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
 }
 
 .directivos22 .container .item .texto {
@@ -1283,7 +1301,7 @@ lottie-player {
 
 .directivos22 .container .item .texto p {
   text-transform: uppercase;
-  font-family: 'NunitoRegular';
+  font-family: "NunitoRegular";
   font-size: 2.25rem;
   color: #ffffff;
   margin: 0;
@@ -1291,7 +1309,7 @@ lottie-player {
 }
 
 .directivos22 .container .item .texto h1 {
-  font-family: 'NunitoBlack';
+  font-family: "NunitoBlack";
   font-size: 3rem;
   color: #ffffff;
   margin: 0;
@@ -1318,7 +1336,7 @@ lottie-player {
 .directivos22 .container .item .texto h2 {
   padding: 5px;
   color: #ffffff;
-  background-color: #37B086;
+  background-color: #37b086;
 }
 
 .directivos22 .container .item .texto h2.long {
@@ -1335,8 +1353,8 @@ lottie-player {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 50px;
-  -webkit-transition: all .8s ease;
-  transition: all .8s ease;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
 }
 
 .directivos22 .container .item h3 {
@@ -1351,8 +1369,8 @@ lottie-player {
           transform: rotate(-180deg);
   color: #ffffff;
   pointer-events: none;
-  -webkit-transition: opacity .8s ease;
-  transition: opacity .8s ease;
+  -webkit-transition: opacity 0.8s ease;
+  transition: opacity 0.8s ease;
   z-index: 9;
 }
 
@@ -1368,8 +1386,8 @@ lottie-player {
 
 .directivos22 .container .item.active {
   width: 100% !important;
-  -webkit-transition: all .8s ease;
-  transition: all .8s ease;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
   border-radius: 10px;
   background-size: cover;
 }
@@ -1377,7 +1395,7 @@ lottie-player {
 @media screen and (max-width: 850px) {
   .directivos22 .container .item.active {
     width: 100%;
-    height: 450px;
+    height: 300px;
   }
 }
 
@@ -1397,8 +1415,8 @@ lottie-player {
 
 .directivos22 .container .item.active:after {
   border-radius: 10px;
-  -webkit-transition: all .8s ease;
-  transition: all .8s ease;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
   opacity: 0;
 }
 
@@ -1419,9 +1437,9 @@ lottie-player {
 
 .slider-info .slick-slide .slide:after,
 .slider-info .slick-slide[aria-hidden="true"]:not(.slick-cloned) ~ .slick-cloned[aria-hidden="true"] .slide:after {
-  background-color: #37B086;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  background-color: #37b086;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 /* slide when active/center */
@@ -1439,9 +1457,9 @@ lottie-player {
 
 .slider-info .slick-center .slide:after,
 .slider-info .slick-slide[aria-hidden="true"]:not([tabindex="-1"]) + .slick-cloned[aria-hidden="true"] .slide:after {
-  background-color: #19375E;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  background-color: #19375e;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .slider-info {
@@ -1479,12 +1497,12 @@ lottie-player {
   content: "";
   width: 100%;
   height: 100%;
-  opacity: .5;
+  opacity: 0.5;
   position: absolute;
   left: 0;
   top: 0;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .socios {
@@ -1495,7 +1513,7 @@ lottie-player {
 
 .socios h1 {
   margin-bottom: 25px;
-  color: #37B086;
+  color: #37b086;
   text-align: center;
 }
 
@@ -1516,7 +1534,7 @@ lottie-player {
 
 .contacto {
   width: 100%;
-  background-color: #19375E;
+  background-color: #19375e;
   padding: 5.55556%;
 }
 
@@ -1526,11 +1544,13 @@ lottie-player {
   margin-bottom: 5.55556%;
 }
 
-.contacto.contact h2, .contacto.contact p {
-  color: #19375E !important;
+.contacto.contact h2,
+.contacto.contact p {
+  color: #19375e !important;
 }
 
-.contacto.contact textarea, .contacto.contact input {
+.contacto.contact textarea,
+.contacto.contact input {
   width: 100%;
   padding: 15px;
   background-color: transparent;
@@ -1548,7 +1568,7 @@ lottie-player {
   content: "";
   width: 80px;
   height: 5px;
-  background-color: #37B086;
+  background-color: #37b086;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -1588,7 +1608,7 @@ lottie-player {
 }
 
 .contacto .container .info p {
-  font-family: 'NunitoRegular';
+  font-family: "NunitoRegular";
   font-size: 1.0125rem;
   color: #ffffff;
   margin: 0;
@@ -1634,8 +1654,8 @@ lottie-player {
 
 .contacto .container .left > div .button {
   z-index: 100;
-  background: #37B086;
-  font-family: 'NunitoBold';
+  background: #37b086;
+  font-family: "NunitoBold";
   font-size: 16px;
   color: #ffffff;
   width: 160px;
@@ -1693,7 +1713,8 @@ lottie-player {
   margin-right: 20px;
 }
 
-.contacto .container .left textarea, .contacto .container .left input {
+.contacto .container .left textarea,
+.contacto .container .left input {
   width: 100%;
   padding: 15px;
   background-color: transparent;
@@ -1717,7 +1738,7 @@ lottie-player {
 }
 
 .wp-tab {
-  background-color: #25D366;
+  background-color: #25d366;
   padding: 5px 15px;
   border-radius: 10px 10px 0 0;
   position: fixed;
@@ -1729,14 +1750,14 @@ lottie-player {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   height: 43px;
 }
 
 .wp-tab:hover {
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   height: 60px;
 }
 
@@ -1755,9 +1776,9 @@ footer {
 
 footer p {
   text-align: center;
-  font-family: 'NunitoRegular';
+  font-family: "NunitoRegular";
   font-size: 0.9rem;
-  color: #19375E;
+  color: #19375e;
   margin: 0;
   font-weight: 400;
 }
@@ -1793,10 +1814,11 @@ footer p {
 }
 
 .news-home .date {
-  color: #37B086;
+  color: #37b086;
 }
 
-.news-home h2, .news-home p {
+.news-home h2,
+.news-home p {
   color: #ffffff;
 }
 
@@ -1807,7 +1829,7 @@ footer p {
 .news-home .button {
   z-index: 100;
   background: transparent;
-  font-family: 'NunitoBold';
+  font-family: "NunitoBold";
   font-size: 16px;
   color: #ffffff;
   width: 160px;
@@ -1830,7 +1852,7 @@ footer p {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   margin: 0;
-  border: #37B086 1px solid;
+  border: #37b086 1px solid;
 }
 
 .news-home .button:hover {
@@ -1852,8 +1874,8 @@ footer p {
   padding: 0 15px;
   width: 250px;
   height: 350px;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   cursor: pointer;
 }
 
@@ -1932,7 +1954,7 @@ footer p {
 }
 
 .news-two .container .news .texto .date p {
-  color: #19375E;
+  color: #19375e;
 }
 
 .news-two .container .news img {
@@ -2016,7 +2038,8 @@ footer p {
   left: 5.55556%;
 }
 
-.afiliados-home .container h1, .afiliados-home .container p {
+.afiliados-home .container h1,
+.afiliados-home .container p {
   color: #ffffff;
 }
 
@@ -2034,7 +2057,7 @@ footer p {
 .afiliados-home .container > div .button {
   z-index: 100;
   background: transparent;
-  font-family: 'NunitoBold';
+  font-family: "NunitoBold";
   font-size: 16px;
   color: #ffffff;
   width: 160px;
@@ -2056,7 +2079,7 @@ footer p {
           justify-content: center;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  border: #37B086 solid 2px;
+  border: #37b086 solid 2px;
   margin: 0 25px;
 }
 
@@ -2071,7 +2094,7 @@ footer p {
 }
 
 .afiliados-home .container > div .button:hover {
-  background-color: #37B086;
+  background-color: #37b086;
 }
 
 * {
@@ -2106,7 +2129,7 @@ body {
 }
 
 .beneficios h1 {
-  color: #19375E;
+  color: #19375e;
   text-align: center;
   margin-bottom: 50px;
   margin-top: 50px;
@@ -2129,8 +2152,8 @@ body {
           transform-style: preserve-3d;
   -webkit-animation: rotation 15s infinite linear;
           animation: rotation 15s infinite linear;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .beneficios .containerss #carousel.active {
@@ -2176,14 +2199,14 @@ body {
 .beneficios .containerss #carousel figure h3 {
   margin-top: 25px;
   text-align: center;
-  color: #37B086;
+  color: #37b086;
 }
 
 @media screen and (max-width: 850px) {
   .beneficios .containerss #carousel figure h3 {
-    font-family: 'NunitoBlack', sans-serif;
+    font-family: "NunitoBlack", sans-serif;
     font-size: 0.7875rem;
-    color: #37B086;
+    color: #37b086;
     margin: 0;
     text-transform: uppercase;
   }
@@ -2191,13 +2214,13 @@ body {
 
 @media screen and (max-width: 850px) and (max-width: 850px) {
   .beneficios .containerss #carousel figure h3 {
-    font-size: 1.05rem;
+    font-size: 0.7rem;
   }
 }
 
 @media screen and (max-width: 850px) and (max-width: 580px) {
   .beneficios .containerss #carousel figure h3 {
-    font-size: 1.05rem;
+    font-size: 0.7rem;
   }
 }
 
