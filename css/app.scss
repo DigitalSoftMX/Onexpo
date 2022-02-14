@@ -177,8 +177,9 @@ body {
   left: 0;
   z-index: 999;
   width: col(18);
-  background-color: rgba(0, 0, 0, 0.527);
+  //background-color: rgba(0, 0, 0, 0.527);
   mix-blend-mode: difference;
+
   @media screen and (max-width: $md) {
     padding:15px;
    }
@@ -265,6 +266,7 @@ lottie-player{
   position: absolute;
 }
 .unete{
+  background-color: white;
   width: col(18);
   padding: 100px 0;
   display: flex;
@@ -530,7 +532,7 @@ lottie-player{
   width: col(18);
   max-width: $min-width;
   margin: auto;
-
+  background-color: white;
   .container{
     padding: col(1);
     display: grid;
@@ -864,6 +866,7 @@ lottie-player{
   width: col(18);
   position: relative;
   height: 100vh;
+  background-color: white;
   @media screen and (max-width: $md) {
     height: 150vh;
  }

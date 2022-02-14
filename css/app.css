@@ -159,7 +159,6 @@ body {
   left: 0;
   z-index: 999;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.527);
   mix-blend-mode: difference;
 }
 
@@ -290,6 +289,7 @@ lottie-player {
 }
 
 .unete {
+  background-color: white;
   width: 100%;
   padding: 100px 0;
   display: -webkit-box;
@@ -666,6 +666,7 @@ lottie-player {
   width: 100%;
   max-width: 1100px;
   margin: auto;
+  background-color: white;
 }
 
 .data .container {
@@ -1150,6 +1151,7 @@ lottie-player {
   width: 100%;
   position: relative;
   height: 100vh;
+  background-color: white;
 }
 
 @media screen and (max-width: 850px) {
