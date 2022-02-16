@@ -1316,6 +1316,7 @@ body {
 .beneficios {
   width: col(18);
   height: 80vh;
+  margin-bottom: 100px;
   @media screen and (max-width: $md) {
     overflow: hidden;
   }
