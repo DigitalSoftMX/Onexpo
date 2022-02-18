@@ -312,12 +312,15 @@ body {
 /********************* Home ******************/
 .index {
   width: 100%;
-  background-size: contain;
+  position: relative;
+  overflow: hidden;
 }
 
 .index video {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 lottie-player {

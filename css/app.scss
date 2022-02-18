@@ -276,10 +276,12 @@ body {
 
 .index {
   width: col(18);
-  background-size: contain;
+  position: relative;
+  overflow: hidden;
   video {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
   }
 }
 lottie-player {
