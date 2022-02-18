@@ -28,7 +28,7 @@
 
 </head>
 
-<body onload="init()">
+<body onload="init()" onpageshow="playVideo()">
 
   <nav class="nav">
     <div class="container">
@@ -64,7 +64,7 @@
 
 
   <section class="index ancla">
-    <video src="ext/video.mp4" autoPlay></video>
+    <video src="ext/video.mp4" autoplay id="vid"></video>
   </section>
 
   <section class="unete">
@@ -382,6 +382,13 @@
   <script type="text/javascript" src="js/slick.js"></script>
   <script src="js/canvas.js"></script>
   <script src="js/scripts.js"></script>
+
+  <script>
+    function playVideo()
+      {
+        document.getElementById("vid").play();
+      }
+  </script>
 </body>
 
 </html>
