@@ -47,15 +47,13 @@ $(window).scroll(function (e) {
 
 });
 
-$(".v").click(function () {
-  $(this).addClass("active");
+
+$(document).ready(function() {
+  if (document.cookie.indexOf("FooBar=true") == -1) {
+    document.cookie = "FooBar=true; max-age=86400";
+    $('#linko').toggleClass('show');
+  }
 });
-
-
-// window.onload = function() {
-//   if (/* conditions */ window.innerWidth > 850)
-//     document.querySelector("video").src = "video.mp4";
-// }
 
 
 $(".burguer").click(function () {

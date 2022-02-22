@@ -273,17 +273,70 @@ body {
 }
 
 /********************* Home ******************/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 
-.v{
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  background-color: #838383;
-  z-index: 99999;
-  &.active{
-    display: none;
+  &.active {
+    display: block;
   }
 }
+
+.modal-content {
+  background-color: $blue;
+  margin: 15% auto;
+  padding: col(1);
+  border-radius: 10px;
+  width: 50%;
+  position: relative;
+  @media screen and (max-width: $md) {
+    width:col(16);
+    margin: 50% auto;
+  }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 50px;
+    font-weight: bold;
+    position: absolute;
+    top: col(1);
+    right: col(1);
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  p {
+    &:nth-of-type(1) {
+      margin-bottom: 25px;
+    }
+    &:nth-of-type(2) {
+      margin-top: 25px;
+    }
+  }
+  p,
+  h2 {
+    text-align: center;
+    color: $white;
+  }
+  .button {
+    margin-top: 25px;
+    width: 50%;
+    border: none;
+  }
+}
+
 
 .index {
   width: col(18);
@@ -294,7 +347,7 @@ body {
     height: 100vh;
     object-fit: cover;
     @media screen and (max-width: $md) {
-      display: none;
+     // display: none;
     }
   }
   .responsive{

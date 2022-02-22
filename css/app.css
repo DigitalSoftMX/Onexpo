@@ -310,16 +310,82 @@ body {
 }
 
 /********************* Home ******************/
-.v {
-  width: 100vw;
-  height: 100vh;
+.modal {
+  display: none;
+  /* Hidden by default */
   position: fixed;
-  background-color: #838383;
-  z-index: 99999;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: hidden;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
 }
 
-.v.active {
-  display: none;
+.modal.active {
+  display: block;
+}
+
+.modal-content {
+  background-color: #19375e;
+  margin: 15% auto;
+  padding: 5.55556%;
+  border-radius: 10px;
+  width: 50%;
+  position: relative;
+}
+
+@media screen and (max-width: 850px) {
+  .modal-content {
+    width: 88.88889%;
+    margin: 50% auto;
+  }
+}
+
+.modal-content .close {
+  color: #aaa;
+  float: right;
+  font-size: 50px;
+  font-weight: bold;
+  position: absolute;
+  top: 5.55556%;
+  right: 5.55556%;
+}
+
+.modal-content .close:hover,
+.modal-content .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content p:nth-of-type(1) {
+  margin-bottom: 25px;
+}
+
+.modal-content p:nth-of-type(2) {
+  margin-top: 25px;
+}
+
+.modal-content p,
+.modal-content h2 {
+  text-align: center;
+  color: #ffffff;
+}
+
+.modal-content .button {
+  margin-top: 25px;
+  width: 50%;
+  border: none;
 }
 
 .index {
@@ -333,12 +399,6 @@ body {
   height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-@media screen and (max-width: 850px) {
-  .index video {
-    display: none;
-  }
 }
 
 .index .responsive {
