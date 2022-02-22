@@ -310,6 +310,18 @@ body {
 }
 
 /********************* Home ******************/
+.v {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: #838383;
+  z-index: 99999;
+}
+
+.v.active {
+  display: none;
+}
+
 .index {
   width: 100%;
   position: relative;
@@ -321,6 +333,26 @@ body {
   height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media screen and (max-width: 850px) {
+  .index video {
+    display: none;
+  }
+}
+
+.index .responsive {
+  width: 100vw;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: none;
+}
+
+@media screen and (max-width: 850px) {
+  .index .responsive {
+    display: initial;
+  }
 }
 
 lottie-player {

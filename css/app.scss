@@ -184,7 +184,7 @@ body {
     height: 4px;
     background-color: $green;
     transition: width .5s ease;
-   
+
     opacity: 0;
   }
   &.activo{
@@ -274,6 +274,17 @@ body {
 
 /********************* Home ******************/
 
+.v{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: #838383;
+  z-index: 99999;
+  &.active{
+    display: none;
+  }
+}
+
 .index {
   width: col(18);
   position: relative;
@@ -282,6 +293,18 @@ body {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
+    @media screen and (max-width: $md) {
+      display: none;
+    }
+  }
+  .responsive{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: none;
+    @media screen and (max-width: $md) {
+      display: initial;
+    }
   }
 }
 lottie-player {
@@ -857,7 +880,7 @@ lottie-player {
       }
       &.active {
         width: 100% !important;
-       
+
         transition: all 0.8s ease;
         border-radius: 10px;
         background-size: cover;

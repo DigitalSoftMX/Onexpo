@@ -47,6 +47,16 @@ $(window).scroll(function (e) {
 
 });
 
+$(".v").click(function () {
+  $(this).addClass("active");
+});
+
+
+// window.onload = function() {
+//   if (/* conditions */ window.innerWidth > 850)
+//     document.querySelector("video").src = "video.mp4";
+// }
+
 
 $(".burguer").click(function () {
   $(".menu").toggleClass("active");
@@ -547,15 +557,15 @@ function initDirective(){
 }
 
 var select = document.getElementById('dire');
-var element = document.getElementById("leftid"); 
+var element = document.getElementById("leftid");
 element.onclick = function() {
   //$('#dire').find('div').first().remove();
   console.log('value', coutTemp)
   if(coutTemp > 0){
     coutTemp--;
     coutTempTwo--;
-    $(".item").removeClass("active"); 
-    
+    $(".item").removeClass("active");
+
     document.querySelector("#dire").insertAdjacentHTML(
       "afterbegin",
       `<div class=" item">
@@ -570,7 +580,7 @@ element.onclick = function() {
     );
     $('#dire').find('div').first().addClass('active');
     select.removeChild(select.lastElementChild);
-    
+
     $(".item").click(function () {
       $(".item").removeClass("active");
       $(this).toggleClass("active");
@@ -578,7 +588,7 @@ element.onclick = function() {
   }
 }
 
-var element = document.getElementById("rigthid"); 
+var element = document.getElementById("rigthid");
 element.onclick = function() {
   //$('#dire').find('div').first().remove();
   console.log('value', coutTemp)
@@ -587,8 +597,8 @@ element.onclick = function() {
     coutTempTwo++;
     $(".item").removeClass("active");
     select.removeChild(select.firstElementChild);
-    $(".item").removeClass("active"); 
-   
+    $(".item").removeClass("active");
+
     document.querySelector("#dire").insertAdjacentHTML(
       "beforeend",
       `<div class=" item active">
@@ -601,14 +611,14 @@ element.onclick = function() {
         </div>
       </div>`
     );
-   
-    
+
+
     $(".item").click(function () {
       $(".item").removeClass("active");
       $(this).toggleClass("active");
     });
   }
-  
+
 }
 
 
@@ -637,11 +647,11 @@ function initNew() {
 }
 
 $(document).ready(function () {
- 
+
 
   $(".boton").click(function () {
     //$(".slid").toggleClass("active");
-   
+
   });
 
   $(".burguer").click(function () {
