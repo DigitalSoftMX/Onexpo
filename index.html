@@ -63,19 +63,23 @@
     <a href="contacto.html"><p>Contacto</p></a>
   </div>
 
-  <a href="index.html" id="linko">
+  <a onclick="play()" id="linko">
     <div id="myModal" class="modal">
       <div class="modal-content">
-        <span class="close">&times;</span>
+        <a onclick="playVid()">
+          <span class="close" >&times;</span>
+        </a>
         <p>Bienvenidos a</p>
         <h2>ONEXPO PUEBLA</h2>
+        <!--button onclick="playVid()" type="button">Play Video</button>
+        <button onclick="pauseVid()" type="button">Pause Video</button><br--> 
       </div>
     </div>
   </a>
 
 
   <section class="index ancla">
-    <video src="ext/video.mp4" autoplay controls id="vide"></video>
+    <video src="ext/video.mp4" autoplay preload="auto" id="vide"></video>
     <video src="ext/responsive.mp4" autoplay controls muted id="vidresponsive" class="responsive"></video>
   </section>
 
@@ -395,6 +399,16 @@
   <script src="js/canvas.js"></script>
   <script src="js/scripts.js"></script>
   <script type="text/javascript">
+
+    var vid = document.getElementById("vide"); 
+
+    function playVid() { 
+      vid.play(); 
+    } 
+
+    function pauseVid() { 
+      vid.pause(); 
+    } 
 
     window.onload = function () {
       modal.style.display = "block";
