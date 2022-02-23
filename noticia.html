@@ -161,10 +161,11 @@
 
   <script>
     document.getElementById('shareBtn').onclick = function() {
+      var url = window.location.href;
       FB.ui({
         display: 'popup',
         method: 'share',
-        href: 'https://developers.facebook.com/docs/',
+        href: url,
       }, function(response){});
     }
     </script>
