@@ -624,6 +624,7 @@ element.onclick = function() {
 
 // esta funcion se ejecuta en el body del index
 function init() {
+  modalshow();
   getEvent(1);
   getPost();
   getSlider();
@@ -685,3 +686,23 @@ textos.forEach((text) => {
     },
   });
 });
+
+
+var vid = document.getElementById("vide"); 
+
+function playVid() { 
+  vid.play();
+  modal.style.display = "none";
+} 
+
+function pauseVid() { 
+  vid.pause(); 
+} 
+
+
+
+var modal = document.getElementById('myModal');
+
+function modalshow () {
+  modal.style.display = "block";
+};

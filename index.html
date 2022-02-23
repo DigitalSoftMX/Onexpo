@@ -29,7 +29,7 @@
 
 </head>
 
-<body onload="init()">
+<body onload="init();">
 
   <nav class="nav">
     <div class="container">
@@ -63,7 +63,7 @@
     <a href="contacto.html"><p>Contacto</p></a>
   </div>
 
-  <a onclick="play()" id="linko">
+  <a id="linko">
     <div id="myModal" class="modal">
       <div class="modal-content">
         <a onclick="playVid()">
@@ -398,39 +398,7 @@
   <script type="text/javascript" src="js/slick.js"></script>
   <script src="js/canvas.js"></script>
   <script src="js/scripts.js"></script>
-  <script type="text/javascript">
 
-    var vid = document.getElementById("vide"); 
-
-    function playVid() { 
-      vid.play(); 
-    } 
-
-    function pauseVid() { 
-      vid.pause(); 
-    } 
-
-    window.onload = function () {
-      modal.style.display = "block";
-
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function (event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      }
-      // Get the <span> element that closes the modal
-      var span = document.getElementsByClassName("close")[0];
-
-      // When the user clicks on <span> (x), close the modal
-      span.onclick = function () {
-        modal.style.display = "none";
-      }
-    };
-
-    var modal = document.getElementById('myModal');
-
-  </script>
 </body>
 
 </html>
