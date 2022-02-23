@@ -32,7 +32,17 @@
 
 <body onload="initNew(); myFunction()">
 
-
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : '321679169996637',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v13.0'
+      });
+    };
+  </script>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 
   <nav class="nav">
     <div class="container">
@@ -112,7 +122,7 @@
             <iframe id="jinu" src="" width="150" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
               allowTransparency="true"></iframe>
 
-
+              <div id="shareBtn" class="btn btn-success clearfix">Share Dialog</div>
 
 
 
@@ -148,6 +158,17 @@
   <script type="text/javascript" src="js/slick.js"></script>
 
   <script src="js/scripts.js"></script>
+
+  <script>
+    document.getElementById('shareBtn').onclick = function() {
+      FB.ui({
+        display: 'popup',
+        method: 'share',
+        href: 'https://developers.facebook.com/docs/',
+      }, function(response){});
+    }
+    </script>
+
 
   <script>
     //compartir en twitter
