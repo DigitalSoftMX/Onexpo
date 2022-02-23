@@ -31,14 +31,6 @@
 
 <body onload="initNew()">
 
-  <div id="fb-root"></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
 
   <nav class="nav">
@@ -73,14 +65,7 @@ fjs.parentNode.insertBefore(js, fjs);
     <a href="contacto.html"><p>Contacto</p></a>
   </div>
 
-  <!--section class="news-home" id="eventBackground">
-    <div>
-      <p class="date" id="date">18.11.21</p>
-      <h2 id="titleEvent"></h2>
-      <p id="description"></p>
 
-    </div>
-  </section-->
 
   <div class="ancla"></div>
   <div class="container pt-5">
@@ -92,18 +77,14 @@ fjs.parentNode.insertBefore(js, fjs);
                 <h3 class="card-title mb-5 mt-5" id="titleEvent" ></h3>
                 <div id="text"></div>
 
-                <div class="fb-share-button" data-href="https://onexpopuebla.vercel.app/noticia.html?id=ckxru90nsrqmm0c254vqsjl0j" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fonexpopuebla.vercel.app%2Fnoticia.html%3Fid%3Dckxru90nsrqmm0c254vqsjl0j&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>
-
-
-                <!-- Your share button code -->
-<div class="fb-share-button"
-data-href="https://www.your-domain.com/your-page.html"
-data-layout="button_count">
-</div>
 
 
 
-                <a href="https://twitter.com/onexpopuebla?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Sigue a @onexpopuebla</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+                <a href="#" class="twitter-follow-button">¡Compártelo en Twitter!</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 
@@ -136,7 +117,9 @@ data-layout="button_count">
     </div>
   </div>
 
-   <a class="fbsharelink" data-shareurl="https://onexpopuebla.vercel.app/noticia.html">Facebook</a>
+  <!-- <a onclick="FBShareOp();"  href="#" title="Share" class="ymsb-fbshare-btn" data-target="popup" id="sharebutton">FACEOBOOK</a> &nbsp; -->
+  <a href="javascript:fbshareCurrentPage()" alt="Share on Facebook">Facebook</a>
+
 
 
 
@@ -144,18 +127,44 @@ data-layout="button_count">
 
   <script src="js/scripts.js"></script>
 
+  <script language="javascript">
+    function fbshareCurrentPage()
+    {window.open("https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(window.location.href)+"&t="+document.title, '',
+    'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
+    return false; }
+  </script>
+
+
   <script>
-// $('.fbsharelink').click( function()
-// {
-//     var shareurl = $(this).data('shareurl');
-//     window.open('https://www.facebook.com/sharer/sharer.php?u='+escape(shareurl)+'&t='+document.title, '',
-//     'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
-//     return false;
-// });
-$('.fbsharelink').on('click', function() {
+    $('.twitter-follow-button').on('click', function() {
     $(this).attr('href',
-        'https://www.facebook.com/sharer/sharer.php?u='+document.title+'&url=' + document.URL);
-});
+        'http://twitter.com/share?text='+document.title+'&url=' + document.URL);
+    });
+  </script>
+
+<script>
+    function FBShareOp(){
+        var product_name = jQuery("#title").val();
+        var description =   jQuery("#description").html();
+        var share_image =   jQuery("#share_image").attr('src');
+        var share_url   =   jQuery("#share_url").attr('href');
+        var share_capt = jQuery("#share_capt").val();
+        var id = location.href.replace(/.*pid=/, '');
+        $.galleriffic.gotoImage(id);
+        FB.ui({
+            method: 'feed',
+            name: product_name,
+            link: id,
+            picture: images,
+            caption: share_capt,
+            description: description
+
+        }, function(response) {
+            if(response && response.post_id){}
+            else{}
+        });
+
+    }
 </script>
 
 </body>
