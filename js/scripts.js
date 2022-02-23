@@ -55,10 +55,8 @@ $(document).ready(function() {
   }
 });
 
-
 $(".burguer").click(function () {
-  $(".menu").toggleClass("active");
-  $(".burguer").toggleClass("active");
+  $(".responsive-nav").toggleClass("active");
 });
 
 $(".tarjas").hover(function () {
@@ -653,9 +651,7 @@ $(document).ready(function () {
 
   });
 
-  $(".burguer").click(function () {
-    $(".responsive-nav").toggleClass("active");
-  });
+
 
   var result = (pourcentage * total) / 100;
   $(".pie").css("strokeDasharray", result);
@@ -688,16 +684,16 @@ textos.forEach((text) => {
 });
 
 
-var vid = document.getElementById("vide"); 
+var vid = document.getElementById("vide");
 
-function playVid() { 
+function playVid() {
   vid.play();
   modal.style.display = "none";
-} 
+}
 
-function pauseVid() { 
-  vid.pause(); 
-} 
+function pauseVid() {
+  vid.pause();
+}
 
 
 

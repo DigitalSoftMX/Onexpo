@@ -347,7 +347,7 @@ body {
     height: 100vh;
     object-fit: cover;
     @media screen and (max-width: $md) {
-     // display: none;
+      display: none;
     }
   }
   .responsive{
@@ -1040,10 +1040,7 @@ lottie-player {
 
   .container {
     display: grid;
-
-    // @media screen and (max-width: $md) {
-    //   grid-template-columns: repeat(2,1fr);
-    // }
+    cursor: grab;
 
     img {
       justify-self: center;

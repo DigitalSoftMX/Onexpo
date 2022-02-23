@@ -401,6 +401,12 @@ body {
      object-fit: cover;
 }
 
+@media screen and (max-width: 850px) {
+  .index video {
+    display: none;
+  }
+}
+
 .index .responsive {
   width: 100vw;
   height: 100vh;
@@ -1416,6 +1422,8 @@ lottie-player {
 .socios .container {
   display: -ms-grid;
   display: grid;
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 
 .socios .container img {
