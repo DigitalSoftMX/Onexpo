@@ -25,24 +25,37 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
   <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 </head>
 
-<body onload="initNew()">
+<body onload="initNew(); myFunction()">
 
 
 
   <nav class="nav">
     <div class="container">
-      <a href="index.html"><p>Home</p></a>
-      <a href="afiliados.html"><p>Afiliados</p></a>
-      <a href="onexpored.html"><p>Onexpored</p></a>
+      <a href="index.html">
+        <p>Home</p>
+      </a>
+      <a href="afiliados.html">
+        <p>Afiliados</p>
+      </a>
+      <a href="onexpored.html">
+        <p>Onexpored</p>
+      </a>
       <img src="img/logo.png" class="logo">
       <img src="img/logoColor.png" class="logoColor">
-      <a href="noticias.html"><p>Noticias</p></a>
-      <a href="ext/pdf.pdf" target="_blank"><p>Revista</p></a>
-      <a href="contacto.html"><p>Contacto</p></a>
+      <a href="noticias.html">
+        <p>Noticias</p>
+      </a>
+      <a href="ext/pdf.pdf" target="_blank">
+        <p>Revista</p>
+      </a>
+      <a href="contacto.html">
+        <p>Contacto</p>
+      </a>
 
       <div class="burguer">
         <div></div>
@@ -53,29 +66,37 @@
   </nav>
 
   <div class="responsive-nav">
-    <a href="index.html"><p>Home</p></a>
-    <a href="afiliados.html"><p>Afiliados</p></a>
+    <a href="index.html">
+      <p>Home</p>
+    </a>
+    <a href="afiliados.html">
+      <p>Afiliados</p>
+    </a>
     <a href="onexpored.html">
       <p>Onexpored</p>
     </a>
-    <a href="noticias.html"><p>Noticias</p></a>
+    <a href="noticias.html">
+      <p>Noticias</p>
+    </a>
     <a href="ext/pdf.pdf" target="_blank">
       <p>Revista</p>
     </a>
-    <a href="contacto.html"><p>Contacto</p></a>
+    <a href="contacto.html">
+      <p>Contacto</p>
+    </a>
   </div>
 
 
 
   <div class="ancla"></div>
   <div class="container pt-5">
-    <div class="row mt-5" >
+    <div class="row mt-5">
       <div class="col-sm-9  mt-5">
         <div class="card shadow bg-body rounded">
-            <div class="card-body">
-                <img  class="card-img-top" id="eventBackground">
-                <h3 class="card-title mb-5 mt-5" id="titleEvent" ></h3>
-                <div id="text"></div>
+          <div class="card-body">
+            <img class="card-img-top" id="eventBackground">
+            <h3 class="card-title mb-5 mt-5" id="titleEvent"></h3>
+            <div id="text"></div>
 
 
 
@@ -83,8 +104,13 @@
 
 
 
-                <a href="#" class="twitter-follow-button">¡Compártelo en Twitter!</a>
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a href="#" class="twitter-follow-button">¡Compártelo en Twitter!</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+            <a href="javascript:fbshareCurrentPage()" alt="Share on Facebook">Compartir en Facebook</a>
+
+            <iframe id="jinu" src="" width="150" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+              allowTransparency="true"></iframe>
 
 
 
@@ -96,29 +122,25 @@
 
 
 
-
-              </div>
+          </div>
         </div>
       </div>
 
       <div class="col-sm-3  mt-5">
-        <div class="row justify-content-around hidden-mobile "  style="height: 30vh;">
-            <div class="col-12">
-                <div class="card shadow bg-body rounded" style="height: 30vh; background-size: cover;" >
-                    <div class="card-body" id="categorias">
-                        <h3 class="text-xl mb-8 font-semibold border-b pb-4">Categorias</h3>
+        <div class="row justify-content-around hidden-mobile " style="height: 30vh;">
+          <div class="col-12">
+            <div class="card shadow bg-body rounded" style="height: 30vh; background-size: cover;">
+              <div class="card-body" id="categorias">
+                <h3 class="text-xl mb-8 font-semibold border-b pb-4">Categorias</h3>
 
-                    </div>
-                </div>
+              </div>
             </div>
+          </div>
         </div>
 
       </div>
     </div>
   </div>
-
-  <!-- <a onclick="FBShareOp();"  href="#" title="Share" class="ymsb-fbshare-btn" data-target="popup" id="sharebutton">FACEOBOOK</a> &nbsp; -->
-  <a href="javascript:fbshareCurrentPage()" alt="Share on Facebook">Facebook</a>
 
 
 
@@ -127,45 +149,26 @@
 
   <script src="js/scripts.js"></script>
 
-  <script language="javascript">
-    function fbshareCurrentPage()
-    {window.open("https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(window.location.href)+"&t="+document.title, '',
-    'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
-    return false; }
-  </script>
-
-
   <script>
-    $('.twitter-follow-button').on('click', function() {
-    $(this).attr('href',
-        'http://twitter.com/share?text='+document.title+'&url=' + document.URL);
+    //compartir en twitter
+    $('.twitter-follow-button').on('click', function () {
+      $(this).attr('href',
+        'http://twitter.com/share?text=' + document.title + '&url=' + document.URL);
     });
-  </script>
 
-<script>
-    function FBShareOp(){
-        var product_name = jQuery("#title").val();
-        var description =   jQuery("#description").html();
-        var share_image =   jQuery("#share_image").attr('src');
-        var share_url   =   jQuery("#share_url").attr('href');
-        var share_capt = jQuery("#share_capt").val();
-        var id = location.href.replace(/.*pid=/, '');
-        $.galleriffic.gotoImage(id);
-        FB.ui({
-            method: 'feed',
-            name: product_name,
-            link: id,
-            picture: images,
-            caption: share_capt,
-            description: description
-
-        }, function(response) {
-            if(response && response.post_id){}
-            else{}
-        });
-
+    //primera solución compartir en fb
+    function myFunction() {
+      var x = document.URL;
+      document.getElementById("jinu").src = 'https://www.facebook.com/plugins/share_button.php?href=' + x + '&layout=button_count&size=large&mobile_iframe=true&width=83&height=28&appId';
     }
-</script>
+
+    //segunda solución compartir en fb
+    function fbshareCurrentPage() {
+      window.location.href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(window.location.href) + "&t=" + document.title;
+
+      return false;
+    }
+  </script>
 
 </body>
 
