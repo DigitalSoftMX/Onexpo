@@ -1035,6 +1035,28 @@ lottie-player {
           filter: blur(0) !important;
 }
 
+.share {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.twitter-follow-button {
+  background-color: #1DA1F2;
+  padding: 5px;
+  color: #ffffff;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.twitter-follow-button .icon {
+  width: 15px;
+  margin: 5px;
+}
+
 #color-overlay {
   position: absolute;
   top: 0;

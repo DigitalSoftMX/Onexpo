@@ -111,16 +111,22 @@
 
 
 
+            <div class="share">
+              <a href="#" class="twitter-follow-button">
+                <img src="img/twitter_blanco.svg" class="icon">¡Compártelo!
+              </a>
+
+              <iframe id="jinu" src="" width="150" height="27" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+              allowTransparency="true"></iframe>
+            </div>
 
 
 
-            <a href="#" class="twitter-follow-button">¡Compártelo en Twitter!</a>
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
             <!-- <a href="javascript:fbshareCurrentPage()" alt="Share on Facebook">Compartir en Facebook</a> -->
 
-            <iframe id="jinu" src="" width="150" height="27" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
-              allowTransparency="true"></iframe>
+
 
               <!-- <div id="shareBtn" class="btn btn-success clearfix">Share Dialog</div> -->
 
@@ -161,11 +167,11 @@
 
   <script>
     document.getElementById('shareBtn').onclick = function() {
-      var url = window.location.href;
+      //var url = window.location.href;
       FB.ui({
         display: 'popup',
         method: 'share',
-        href: url,
+        href: 'https://onexpopuebla.vercel.app/noticias',
 
 
         title: 'Noticia',  // The same than name in feed method

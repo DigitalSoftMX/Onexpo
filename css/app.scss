@@ -774,6 +774,23 @@ lottie-player {
   }
 }
 
+.share{
+  display: flex;
+  align-items: center;
+}
+
+.twitter-follow-button{
+  background-color: #1DA1F2;
+  padding: 5px;
+  color: $white;
+  border-radius: 5px;
+  margin-right: 10px;
+  .icon{
+    width: 15px;
+    margin: 5px;
+  }
+}
+
 #color-overlay {
   position: absolute;
   top: 0;
