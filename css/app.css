@@ -336,7 +336,7 @@ body {
 }
 
 .modal-content {
-  background-color: #19375e;
+  background-color: transparent;
   margin: 15% auto;
   padding: 5.55556%;
   border-radius: 10px;
