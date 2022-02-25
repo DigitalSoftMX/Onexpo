@@ -1565,3 +1565,20 @@ body {
     transform: rotateY(360deg);
   }
 }
+
+
+.aviso{
+  max-width: $max-width;
+  margin: 82px auto 25px auto;
+  box-shadow: $boxShadow;
+  padding: col(1);
+  h2{
+    margin-bottom: 25px;
+  }
+  ul{
+    padding-left: 25px;
+  }
+  p{
+    margin-bottom: 15px;
+  }
+}
