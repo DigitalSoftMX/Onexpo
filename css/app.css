@@ -2255,7 +2255,7 @@ body {
   }
 }
 
-.aviso {
+section.aviso {
   max-width: 1600px;
   margin: 82px auto 25px auto;
   -webkit-box-shadow: 0px 0px 26px -4px rgba(149, 149, 149, 0.75);
@@ -2263,15 +2263,15 @@ body {
   padding: 5.55556%;
 }
 
-.aviso h2 {
+section.aviso h2 {
   margin-bottom: 25px;
 }
 
-.aviso ul {
+section.aviso ul {
   padding-left: 25px;
 }
 
-.aviso p {
+section.aviso p {
   margin-bottom: 15px;
 }
 /*# sourceMappingURL=app.css.map */
