@@ -745,7 +745,6 @@ lottie-player {
   background-image: url(../img/grupo347.jpg);
   background-size: cover;
   padding: 5.55556%;
-  background-attachment: fixed;
 }
 
 .expo .container {
@@ -1106,7 +1105,7 @@ lottie-player {
   width: 100%;
   height: 100%;
   background-color: #37b086;
-  opacity: 0.6;
+  opacity: 0.4;
   z-index: 0;
 }
 
