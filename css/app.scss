@@ -791,6 +791,19 @@ lottie-player {
   }
 }
 
+.sharefb{
+  background-color: #4267B2;
+  padding: 5px;
+  color: $white;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+  .icon{
+    width: 10px;
+    margin: 5px;
+  }
+}
+
 #color-overlay {
   position: absolute;
   top: 0;
