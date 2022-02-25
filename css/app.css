@@ -1581,6 +1581,10 @@ lottie-player {
   margin-right: 15px;
 }
 
+.contacto .container .info .icon.fb {
+  width: 12px;
+}
+
 .contacto .container .info p {
   font-family: "NunitoRegular";
   font-size: 1.0125rem;
@@ -1709,6 +1713,11 @@ lottie-player {
     width: 100%;
     margin-top: 20px;
   }
+}
+
+.contacto .aviso {
+  margin-top: 15px;
+  color: #ffffff;
 }
 
 .wp-tab {
