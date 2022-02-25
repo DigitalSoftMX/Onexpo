@@ -113,7 +113,10 @@ p {
       @include p(initial, 0.9);
     }
   }
+
 }
+
+
 
 @mixin button($bg) {
   z-index: 100;
@@ -612,11 +615,38 @@ lottie-player {
         width: col(18);
       }
     }
-    h2 {
-      margin-bottom: 15px;
+    h2#titleEvent{
+      margin-bottom: 25px;
+      div{
+        &.verde{
+          color: $green;
+        }
+        &.azul{
+          color: $blue;
+        }
+        &.negro{
+          color: $black;
+        }
+        &.blanco{
+          color: $white;
+        }
+      }
     }
-    p {
-      color: $white;
+    p#short_description{
+      div{
+        &.verde{
+          color: $green;
+        }
+        &.azul{
+          color: $blue;
+        }
+        &.negro{
+          color: $black;
+        }
+        &.blanco{
+          color: $white;
+        }
+      }
     }
   }
 }
@@ -688,6 +718,7 @@ lottie-player {
   @media screen and (max-width: $md) {
     display: none !important;
   }
+
 }
 
 .noticias {

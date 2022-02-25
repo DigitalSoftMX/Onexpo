@@ -790,11 +790,39 @@ lottie-player {
   }
 }
 
-.expo .container h2 {
-  margin-bottom: 15px;
+.expo .container h2#titleEvent {
+  margin-bottom: 25px;
 }
 
-.expo .container p {
+.expo .container h2#titleEvent div.verde {
+  color: #37b086;
+}
+
+.expo .container h2#titleEvent div.azul {
+  color: #19375e;
+}
+
+.expo .container h2#titleEvent div.negro {
+  color: #000000;
+}
+
+.expo .container h2#titleEvent div.blanco {
+  color: #ffffff;
+}
+
+.expo .container p#short_description div.verde {
+  color: #37b086;
+}
+
+.expo .container p#short_description div.azul {
+  color: #19375e;
+}
+
+.expo .container p#short_description div.negro {
+  color: #000000;
+}
+
+.expo .container p#short_description div.blanco {
   color: #ffffff;
 }
 
