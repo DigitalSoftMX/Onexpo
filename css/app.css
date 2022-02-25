@@ -743,8 +743,9 @@ lottie-player {
   position: relative;
   width: 100%;
   background-image: url(../img/grupo347.jpg);
-  background-size: cover;
+  background-size: cover !important;
   padding: 5.55556%;
+  height: 380px;
 }
 
 .expo .container {

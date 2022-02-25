@@ -590,9 +590,9 @@ lottie-player {
   position: relative;
   width: col(18);
   background-image: url(../img/grupo347.jpg);
-  background-size: cover;
+  background-size: cover !important;
   padding: col(1);
-
+  height: 380px;
   .container {
     max-width: $min-width;
     display: flex;
